@@ -36,18 +36,25 @@ function theme_enqueue_styles() {
 require_once('cpt.php'); 
 
 
-if( function_exists('acf_add_options_page') )
-{
-    acf_add_options_page(array(
-        'page_title'    => 'Ottawa Neighbourhood Options',
-        'menu_title'    => 'Ottawa Neighbourhood Options',
-        'menu_slug'     => 'options_ottawa_neighbourhood',
-        'capability'    => 'edit_posts',
-        'parent_slug'   => 'edit.php?post_type=ottawa_neighbourhood',
-        'position'      => false,
-        'icon_url'      => 'dashicons-admin-generic',
-        'redirect'      => false,
-    ));
+if( function_exists('acf_add_options_page') ) {
+    $neighbourhoods = array(
+        'ottawa' => "Ottawa",
+        'kanata' => "Kanata",
+        'stitts' => "Stittsville",
+    );
+
+    foreach ($neighbourhoods as $key => $value) {
+        acf_add_options_page(array(
+            'page_title'    => $value.' Neighbourhood Options',
+            'menu_title'    => 'Options',
+            'menu_slug'     => 'options_'.$key.'_neighbourhood',
+            'capability'    => 'edit_posts',
+            'parent_slug'   => 'edit.php?post_type='.$key.'_neighbourhood',
+            'position'      => false,
+            'icon_url'      => 'dashicons-admin-generic',
+            'redirect'      => false,
+        ));
+    }
 }
 
 function add_child_theme_textdomain() {
