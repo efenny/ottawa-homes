@@ -1,6 +1,6 @@
 <?php 
 // Register Custom Post Type Function
-function create_cpt($key, $value, $icon = 'dashicons-admin-generic') {
+function create_cpt($key, $value, $icon = 'dashicons-admin-generic', $cat = false) {
     $labels = array(
         'name'                  => _x( $value.'s', 'Post Type General Name', 'website' ),
         'singular_name'         => _x( $value, 'Post Type Singular Name', 'website' ),
@@ -36,13 +36,14 @@ function create_cpt($key, $value, $icon = 'dashicons-admin-generic') {
         'labels'                => $labels,
         'supports'              => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
         'hierarchical'          => false,
+        'taxonomies'            => $cat ? array( 'category' ) : array(),
         'public'                => true,
         'rewrite' => array(
             'slug' => $key
         ),
         'show_ui'               => true,
         'show_in_menu'          => true,
-        'menu_position'         => 14,
+        'menu_position'         => 19,
         'menu_icon'             => $icon,
         'show_in_admin_bar'     => true,
         'show_in_nav_menus'     => true,
@@ -55,17 +56,13 @@ function create_cpt($key, $value, $icon = 'dashicons-admin-generic') {
     register_post_type( $key, $args );
 }
 
-$cpts = array(
-    'ottawa_listings' => array('Ottawa Listings', 'dashicons-format-aside'),
-    'team_members' => array('Team Members', 'dashicons-admin-users')
-);
-
 foreach ($cpts as $key => $value) {
     $name = $value[0];
-    $dashicon = $value[1];
+    $dashicon = !empty($value[1]) ? $value[1] : null;
+    $cat = !empty($value[2]) ? $value[2] : false;
     
-    add_action( 'init', function() use ($key, $name, $dashicon) {
-        create_cpt($key, $name, $dashicon);
+    add_action( 'init', function() use ($key, $name, $dashicon, $cat) {
+        create_cpt($key, $name, $dashicon, $cat);
     }, 0 , 2);
 }
 
@@ -106,6 +103,7 @@ function create_neighbourhoods($key, $value) {
         'description'           => __( $value.' Neighbourhoods part of The Website' ),
         'labels'                => $labels,
         'supports'              => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
+        
         'hierarchical'          => false,
         'public'                => true,
         'rewrite' => array(
@@ -113,7 +111,7 @@ function create_neighbourhoods($key, $value) {
         ),
         'show_ui'               => true,
         'show_in_menu'          => true,
-        'menu_position'         => 14,
+        'menu_position'         => 20,
         'menu_icon'             => 'dashicons-admin-multisite',
         'show_in_admin_bar'     => true,
         'show_in_nav_menus'     => true,

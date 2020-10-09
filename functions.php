@@ -39,6 +39,11 @@ $neighbourhoods = array(
     'stitts' => "Stittsville",
 );
 
+$cpts = array(
+    'ottawa_listings' => array('Ottawa Listing', 'dashicons-format-aside', true),
+    'team_members' => array('Team Member', 'dashicons-admin-users')
+);
+
 require_once('cpt.php'); 
 
 if( function_exists('acf_add_options_page') ) {
@@ -49,6 +54,19 @@ if( function_exists('acf_add_options_page') ) {
             'menu_slug'     => 'options_'.$key.'_neighbourhood',
             'capability'    => 'edit_posts',
             'parent_slug'   => 'edit.php?post_type='.$key.'_neighbourhood',
+            'position'      => false,
+            'icon_url'      => 'dashicons-admin-generic',
+            'redirect'      => false,
+        ));
+    }
+
+    foreach ($cpts as $key => $value) {
+        acf_add_options_page(array(
+            'page_title'    => $value,
+            'menu_title'    => 'Options',
+            'menu_slug'     => 'options_'.$key,
+            'capability'    => 'edit_posts',
+            'parent_slug'   => 'edit.php?post_type='.$key,
             'position'      => false,
             'icon_url'      => 'dashicons-admin-generic',
             'redirect'      => false,
