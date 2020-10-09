@@ -18,7 +18,7 @@ add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 function theme_enqueue_styles() { 
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/css/theme.min.css');
     wp_enqueue_style('custom-editor-style', get_template_directory_uri() . '/css/custom-editor-style.min.css');
-    wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/style.css', array($parent_style));
+    // wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/style.css', array($parent_style));
 
 	// Get the theme data
     $the_theme = wp_get_theme();
@@ -33,16 +33,15 @@ function theme_enqueue_styles() {
     }
 }
 
+$neighbourhoods = array(
+    'ottawa' => "Ottawa",
+    'kanata' => "Kanata",
+    'stitts' => "Stittsville",
+);
+
 require_once('cpt.php'); 
 
-
 if( function_exists('acf_add_options_page') ) {
-    $neighbourhoods = array(
-        'ottawa' => "Ottawa",
-        'kanata' => "Kanata",
-        'stitts' => "Stittsville",
-    );
-
     foreach ($neighbourhoods as $key => $value) {
         acf_add_options_page(array(
             'page_title'    => $value.' Neighbourhood Options',
