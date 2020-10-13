@@ -19,10 +19,10 @@ $container = get_theme_mod('understrap_container_type');
         <?php
 
         // Check value exists.
-        if (have_rows('components')) {
+        if (have_rows('flexible_content_components')) {
             $currItem = 0;
             // Loop through rows.
-            while (have_rows('components')) {
+            while (have_rows('flexible_content_components')) {
                 the_row();
                 $currItem++; //used to avoid duplicate ids on html elements
 

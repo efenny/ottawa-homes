@@ -39,7 +39,8 @@ function create_cpt($key, $value, $icon = 'dashicons-admin-generic', $cat = fals
         'taxonomies'            => $cat ? array( 'category' ) : array(),
         'public'                => true,
         'rewrite' => array(
-            'slug' => $key
+            // so that the url is more user friendly
+            'slug' => str_replace('_', '-', $key)
         ),
         'show_ui'               => true,
         'show_in_menu'          => true,

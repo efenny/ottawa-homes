@@ -3,27 +3,24 @@ $ctaTitle = !empty(get_sub_field('title')) ? get_sub_field('title') : '';
 $ctaText = !empty(get_sub_field('text')) ? get_sub_field('text') : '';
 $ctaButton = !empty(get_sub_field('button')) ? get_sub_field('button') : array('url' => '', 'title' => '', 'target' => '');
 
-// Generating the style attribute based on the settings
-$ctaStyle .= !empty(get_sub_field('background_color')) ? 'style="background-color:' . get_sub_field('background_color') . ';"' : '';
 ?>
 
-<section id="ctaBlock<?php echo $currItem; ?>" class="py-5 position-relative" <?php echo $ctaStyle; ?>>
+<section id="cta_block<?php echo $currItem; ?>"
+    class="med-blue-bg position-relative <?php echo get_sub_field('image') ? 'bg-image' : ''; ?>"
+    style="<?php echo get_sub_field('image') ? 'background-image: url('.get_sub_field('image')['url'].');' : ''; ?>">
     <div class="container">
-        <div class="cta-text">
+        <div class="cta-text text-white text-center">
             <h3><?php echo $ctaTitle; ?></h3>
-            <div class="pt-3 pb-2"><?php echo $ctaText; ?></div>
-            <a href="<?php echo $ctaButton['url']; ?>" target="<?php echo $ctaButton['target']; ?>" class="btn btn-primary"><?php echo $ctaButton['title']; ?></a>
+            <div class=""><?php echo $ctaText; ?></div>
+            <?php if( have_rows('buttons') ):  ?>
+            <div class="button-wrapper">
+                <?php while( have_rows('buttons') ) : the_row();
+                $button = get_sub_field('button'); ?>
+                <a href="<?php echo $button['url'] ?>" target="<?php echo $button['target'] ?>"
+                    class="btn btn-white <?php echo get_sub_field('button_class') ?>"><?php echo $button['title'] ?></a>
+                <?php endwhile; ?>
+            </div>
+            <?php endif; ?>
         </div>
     </div>
 </section>
-
-<style>
-
-.cta-text{
-    max-width:700px;
-    margin:auto;
-    position:relative;
-    text-align: center;
-}
-
-</style>

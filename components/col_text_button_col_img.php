@@ -1,36 +1,25 @@
-<?php
-$button = get_sub_field('button');
-$btnLinkTarget = $button['target'];
-$btnLinkTitle = $button['title'];
-$btnLinkUrl = $button['url'];
-$btnLinkAlt = !empty($button['alt']) ? $button['alt'] : '';
-$image = !empty(get_sub_field('image')['url']) ? get_sub_field('image')['url'] : '';
-?>
-
-<section id="coltext<?php echo $currItem; ?>" class="py-5 position-relative">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-6 features-text">
-                <div class="pr-md-5">
-                    <h3 class="mb-4"><?php the_sub_field('title') ?></h3>
-                    <div class="mb-4"><?php the_sub_field('text') ?></div>
-                    <?php if (!empty($btnLinkUrl)) { ?>
-                        <a class="btn btn-primary mb-4 mb-md-0" href="<?php echo $btnLinkUrl; ?>" <?php echo $btnLinkTarget; ?> <?php echo $btnLinkAlt ?>><?php echo $btnLinkTitle ?></a>
-                    <?php } ?>
-                </div>
+<?php $section_margin = get_sub_field('section_margin'); ?>
+<section id="col_text-<?php echo $currItem; ?>" class="section-col-text-img position-relative <?php echo $section_margin['top'] ? 'section-margin-top' : '';?> <?php echo $section_margin['bottom'] ? 'section-margin-bottom' : ''; ?>">
+    <div class="row no-gutters align-items-center <?php echo get_sub_field('left_or_right_image') ? 'flex-row': 'flex-row-reverse'; ?> <?php echo get_sub_field('blue_background') ? 'light-blue-bg': ''; ?>">
+            <div class="col-12 col-md-4 offset-md-1 mr-auto -text">
+                <?php echo get_sub_field('text') ? get_sub_field('text') : ''; ?>
+                <?php if( have_rows('buttons') ):  ?>
+                    <div class="button-wrapper">
+                    <?php while( have_rows('buttons') ) : the_row();
+                    $button = get_sub_field('button'); ?>
+                        <a href="<?php echo $button['url'] ?>" target="<?php echo $button['target'] ?>" class="btn <?php echo get_sub_field('button_class') ?>"><?php echo $button['title'] ?></a>
+                    <?php endwhile; ?>
+                    </div>
+                <?php endif; ?>
             </div>
 
-            <div class="col-md-6 block-image" style="background:url('<?php echo $image; ?>') no-repeat center center; background-size: cover; "></div>
-
+            <?php $image =  get_sub_field('image');
+            if($image) {?>
+                <div class="col-12 col-md-6 -image">
+                    <figure>
+                        <?php echo wp_get_attachment_image($image, 'full'); ?>
+                    </figure>
+                </div>
+            <?php } ?>
         </div>
-
-    </div>
 </section>
-
-
-
-<style>
-    .block-image {
-        min-height: 400px;
-    }
-</style>

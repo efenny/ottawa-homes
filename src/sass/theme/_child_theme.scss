@@ -1,4 +1,36 @@
 // custom child theme styles go here
-body {
-  background: $blue;
+@import 'components/_col_text_button_col_img';
+@import 'components/_buttons';
+@import 'components/_cta_block';
+
+.row ,
+section { 
+    &.light-blue-bg {
+        background: $light-blue;
+    }
+
+     &.med-blue-bg {
+        background: $med-blue;
+    }
+
+    &.bg-image {
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+.section-padding-top {
+    padding-top: $section-spacing;
+}
+
+.section-padding-bottom {
+    padding-bottom: $section-spacing;
+}
+
+.section-margin-top {
+    margin-top: $section-spacing;
+}
+
+.section-margin-bottom {
+    margin-bottom: $section-spacing;
 }

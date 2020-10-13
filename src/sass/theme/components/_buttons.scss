@@ -1,0 +1,24 @@
+.btn {
+  border-radius: 0;
+  font-weight: 700;
+  font-size: 1.125rem;
+  padding: 1.125rem 1.25rem;
+}
+
+.btn-white {
+  background: $white;
+  color: $med-blue;
+
+  &:hover {
+    background: $gray-200;
+    color: $med-blue;
+  }
+
+  &.dark {
+    color: $dark-blue;
+
+    &:hover {
+      color: $dark-blue;
+    }
+  }
+}

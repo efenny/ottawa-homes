@@ -40,12 +40,14 @@ $neighbourhoods = array(
 );
 
 $cpts = array(
-    'ottawa_listings' => array('Ottawa Listing', 'dashicons-format-aside', true),
+    'our_listings' => array('Our Listing', 'dashicons-format-aside', true),
     'team_members' => array('Team Member', 'dashicons-admin-users')
 );
 
 require_once('cpt.php'); 
 
+// note that all of these custom options pages store their data in options 
+// so you'll need to make sure the field have unique fields
 if( function_exists('acf_add_options_page') ) {
     foreach ($neighbourhoods as $key => $value) {
         acf_add_options_page(array(
@@ -62,7 +64,7 @@ if( function_exists('acf_add_options_page') ) {
 
     foreach ($cpts as $key => $value) {
         acf_add_options_page(array(
-            'page_title'    => $value,
+            'page_title'    => $value[0],
             'menu_title'    => 'Options',
             'menu_slug'     => 'options_'.$key,
             'capability'    => 'edit_posts',
