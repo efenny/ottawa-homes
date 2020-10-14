@@ -159,11 +159,11 @@
                                 "id": ""
                             },
                             "choices": {
-                                "50|50": "50|50",
-                                "60|40": "60|40",
-                                "40|60": "40|60"
+                                "6": "50_50",
+                                "7": "60_40",
+                                "5": "40_60"
                             },
-                            "default_value": "50|50",
+                            "default_value": 6,
                             "allow_null": 1,
                             "multiple": 0,
                             "ui": 1,
@@ -413,5 +413,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1602705572
+    "modified": 1602707060
 }

@@ -1,4 +1,4 @@
-.btn {
+a.btn {
   border-radius: 0;
   font-weight: 700;
   font-size: 1.125rem;
@@ -6,7 +6,7 @@
   text-transform: capitalize;
 }
 
-.btn-white {
+a.btn.btn-white {
   background: $white;
   color: $med-blue;
 

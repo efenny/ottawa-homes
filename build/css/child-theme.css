@@ -11541,23 +11541,22 @@ figure.woocommerce-product-gallery__wrapper {
 .section-col-text-img figure {
   margin: 0; }
 
-.btn,
-.wpcf7 input[type=submit] {
+a.btn {
   border-radius: 0;
   font-weight: 700;
   font-size: 1.125rem;
   padding: 1.125rem 1.25rem;
   text-transform: capitalize; }
 
-.btn-white {
+a.btn.btn-white {
   background: #fff;
   color: #4076aa; }
-  .btn-white:hover {
+  a.btn.btn-white:hover {
     background: #e9ecef;
     color: #4076aa; }
-  .btn-white.dark {
+  a.btn.btn-white.dark {
     color: #182947; }
-    .btn-white.dark:hover {
+    a.btn.btn-white.dark:hover {
       color: #182947; }
 
 section[id*='cta_block'] {
