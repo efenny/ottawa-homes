@@ -3,6 +3,8 @@
 @import 'components/_buttons';
 @import 'components/_cta_block';
 @import 'components/_page_header';
+@import 'components/_header';
+@import 'components/_footer';
 
 body {
   color: $dark-blue;
@@ -20,8 +22,13 @@ h4 {
   h1,
   h2,
   h3,
-  h4 {
+  h4,
+  a {
     color: $white;
+  }
+
+  a:hover {
+    color: $gray-300;
   }
 }
 

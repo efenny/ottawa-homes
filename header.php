@@ -18,54 +18,63 @@ $container = get_theme_mod('understrap_container_type');
 <html <?php language_attributes(); ?>>
 
 <head>
-	<meta charset="<?php bloginfo('charset'); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<?php wp_head(); ?>
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-	<?php do_action('wp_body_open'); ?>
-	<div class="site" id="page">
+    <?php do_action('wp_body_open'); ?>
+    <div class="site" id="page">
 
-		<!-- ******************* The Navbar Area ******************* -->
-		<div id="wrapper-navbar" class="thenav" itemscope itemtype="http://schema.org/WebSite">
+        <!-- ******************* The Navbar Area ******************* -->
+        <div id="wrapper-navbar" class="thenav" itemscope itemtype="http://schema.org/WebSite">
 
-			<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e('Skip to content', 'understrap'); ?></a>
+            <a class="skip-link sr-only sr-only-focusable"
+                href="#content"><?php esc_html_e('Skip to content', 'understrap'); ?></a>
 
-			<nav class="navbar navbar-expand-md navbar-dark bg-primary">
+            <?php if(get_field('global_header', 'options')['notification']): ?>
+            <div class="notifcation-bar pt-3 pb-3">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 text-white text-center">
+                            <?php echo get_field('global_header', 'options')['notification']; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php endif; ?>
 
-				<?php if ('container' == $container) : ?>
-					<div class="container">
-					<?php endif; ?>
+            <nav class="navbar navbar-expand-md navbar-dark bg-primary">
 
-					<!-- Your site title as branding in the menu -->
-					<?php if (!has_custom_logo()) { ?>
+                <?php if ('container' == $container) : ?>
+                <div class="container">
+                    <?php endif; ?>
 
-						<?php if (is_front_page() && is_home()) : ?>
+                    <!-- Your site title as branding in the menu -->
+                    <?php if (!has_custom_logo()) { ?>
 
-							<h1 class="navbar-brand mb-0"><a rel="home" href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" itemprop="url"><?php bloginfo('name'); ?></a></h1>
-
-						<?php else : ?>
-
-							<a class="navbar-brand" rel="home" href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" itemprop="url"><?php bloginfo('name'); ?></a>
-
-						<?php endif; ?>
-
-
-					<?php } else {
+                    <a href="<?php echo get_site_url(); ?>">
+                        <img src="<?php echo get_field('global_header', 'options')['logo']['url']; ?>"
+                            alt="<?php echo get_bloginfo('name'); ?> logo">
+                    </a>
+                    <?php } else {
 						the_custom_logo();
 					} ?>
-					<!-- end custom logo -->
+                    <!-- end custom logo -->
 
-					<a id="burgertoggler" href="#" class="order-2 navbar-toggler mr-2 mobile-square burger d-flex d-md-none" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-						<div class="mobile-burger">
-							<span class="burger-bars"></span>
-						</div>
-					</a>
+                    <a id="burgertoggler" href="#"
+                        class="order-2 navbar-toggler mr-2 mobile-square burger d-flex d-md-none" data-toggle="collapse"
+                        data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <div class="mobile-burger">
+                            <span class="burger-bars"></span>
+                        </div>
+                    </a>
 
-					<!-- The WordPress Menu goes here -->
-					<?php wp_nav_menu(
+                    <!-- The WordPress Menu goes here -->
+                    <?php wp_nav_menu(
 						array(
 							'theme_location'  => 'primary',
 							'container_class' => 'collapse navbar-collapse',
@@ -77,10 +86,10 @@ $container = get_theme_mod('understrap_container_type');
 							'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
 						)
 					); ?>
-					<?php if ('container' == $container) : ?>
-					</div><!-- .container -->
-				<?php endif; ?>
+                    <?php if ('container' == $container) : ?>
+                </div><!-- .container -->
+                <?php endif; ?>
 
-			</nav><!-- .site-navigation -->
+            </nav><!-- .site-navigation -->
 
-		</div><!-- #wrapper-navbar end -->
+        </div><!-- #wrapper-navbar end -->

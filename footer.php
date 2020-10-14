@@ -45,7 +45,7 @@ $global_footer = get_field('global_footer', 'options');
             </div>
         </div>
     </section>
-    <section id="bottom-footer" class="dark-blue-bg text-white">
+    <section id="bottom-footer" class="dark-blue-bg text-white text-center pt-4 pb-4">
         <div class="container">
             <div class="row">
                 <div class="col-12">

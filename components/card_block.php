@@ -1,10 +1,10 @@
 <section id="card_block-<?php echo $currItem; ?>" class="light-blue-bg section-padding-top section-padding-bottom">
     <?php if(get_sub_field('text')) {?>
-    <div class="row">
+    <div class="row no-gutters w-100">
         <div class="col-12 text-center text-blue mb-5"><?php echo get_sub_field('text'); ?></div>
     </div>
     <?php } ?>
-    <div class="row justify-content-around w-100">
+    <div class="row no-gutters justify-content-around w-100">
         <?php 
             if( have_rows('cards') ):
             while( have_rows('cards') ) : the_row(); ?>

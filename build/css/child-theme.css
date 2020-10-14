@@ -11604,6 +11604,19 @@ section[id*='cta_block'] {
     font-size: 1.125rem !important;
     line-height: 1.556 !important; }
 
+.notifcation-bar {
+  background: #4076aa; }
+  .notifcation-bar p {
+    margin-bottom: 0; }
+    .notifcation-bar p a {
+      text-decoration: underline; }
+
+footer #bottom-footer p:last-child {
+  margin-bottom: 0; }
+
+footer #bottom-footer a {
+  text-decoration: underline; }
+
 body {
   color: #182947; }
 
@@ -11617,8 +11630,12 @@ h4 {
 .text-white h1,
 .text-white h2,
 .text-white h3,
-.text-white h4 {
+.text-white h4,
+.text-white a {
   color: #fff; }
+
+.text-white a:hover {
+  color: #dee2e6; }
 
 .row.light-blue-bg,
 section.light-blue-bg {
