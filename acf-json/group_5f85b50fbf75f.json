@@ -341,6 +341,54 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_5f875893866e5": {
+                    "key": "layout_5f875893866e5",
+                    "name": "contact_block",
+                    "label": "Contact block",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5f875893866e6",
+                            "label": "Text",
+                            "name": "text",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        },
+                        {
+                            "key": "field_5f87589c866ea",
+                            "label": "Form shortcode",
+                            "name": "form_shortcode",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Content Row",
@@ -365,5 +413,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1602700364
+    "modified": 1602705572
 }
