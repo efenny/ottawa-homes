@@ -1,4 +1,8 @@
-section[id*=cta_block] {
-    padding-top: $section-spacing;
-    padding-bottom: $section-spacing;
+section[id*='cta_block'] {
+  padding-top: $section-spacing;
+  padding-bottom: $section-spacing;
+
+  h2 {
+    margin-bottom: 1rem;
+  }
 }

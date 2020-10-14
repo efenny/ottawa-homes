@@ -3,34 +3,55 @@
 @import 'components/_buttons';
 @import 'components/_cta_block';
 
-.row ,
-section { 
-    &.light-blue-bg {
-        background: $light-blue;
-    }
+body {
+  color: $dark-blue;
+}
 
-     &.med-blue-bg {
-        background: $med-blue;
-    }
+h1,
+h2,
+h3,
+h4 {
+  color: $med-blue;
+}
 
-    &.bg-image {
-        background-size: cover;
-        background-position: center;
-    }
+.text-white {
+  p,
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: $white;
+  }
+}
+
+.row,
+section {
+  &.light-blue-bg {
+    background: $light-blue;
+  }
+
+  &.med-blue-bg {
+    background: $med-blue;
+  }
+
+  &.bg-image {
+    background-size: cover;
+    background-position: center;
+  }
 }
 
 .section-padding-top {
-    padding-top: $section-spacing;
+  padding-top: $section-spacing;
 }
 
 .section-padding-bottom {
-    padding-bottom: $section-spacing;
+  padding-bottom: $section-spacing;
 }
 
 .section-margin-top {
-    margin-top: $section-spacing;
+  margin-top: $section-spacing;
 }
 
 .section-margin-bottom {
-    margin-bottom: $section-spacing;
+  margin-bottom: $section-spacing;
 }

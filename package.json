@@ -4,7 +4,8 @@
   "description": "Basic Child Theme for UnderStrap Theme Framework: https://github.com/holger1411/understrap",
   "main": "index.js",
   "scripts": {
-    "build": "gulp watch-bs && gulp styles && gulp scripts && gulp watch ",
+    "build-sync": "gulp watch-bs && gulp styles && gulp scripts && gulp watch ",
+    "build": "gulp styles && gulp scripts && gulp watch ",
     "dist": "gulp dist"
   },
   "repository": {
