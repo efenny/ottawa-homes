@@ -76,6 +76,12 @@ if( function_exists('acf_add_options_page') ) {
     }
 }
 
+
+add_action( 'after_setup_theme', 'add_new_image_sizes' );
+function add_new_image_sizes() {
+    add_image_size( 'x-large', 1920, 999999 );
+}
+
 function add_child_theme_textdomain() {
     load_child_theme_textdomain( 'understrap-child', get_stylesheet_directory() . '/languages' );
 }

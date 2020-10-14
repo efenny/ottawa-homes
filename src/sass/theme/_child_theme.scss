@@ -2,6 +2,7 @@
 @import 'components/_col_text_button_col_img';
 @import 'components/_buttons';
 @import 'components/_cta_block';
+@import 'components/_page_header';
 
 body {
   color: $dark-blue;
@@ -32,6 +33,10 @@ section {
 
   &.med-blue-bg {
     background: $med-blue;
+  }
+
+  &.dark-blue-bg {
+    background: $dark-blue;
   }
 
   &.bg-image {
