@@ -5,7 +5,9 @@ var sass = require('gulp-sass');
 var cssnano = require('gulp-cssnano');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
+// replaced uglify with terser since uglify is no longer maintained
+// var uglify = require('gulp-uglify');
+const terser = require('gulp-terser');
 var imagemin = require('gulp-imagemin');
 var ignore = require('gulp-ignore');
 var rimraf = require('gulp-rimraf');
@@ -158,7 +160,7 @@ gulp.task('scripts', function () {
   gulp
     .src(scripts, { allowEmpty: true })
     .pipe(concat('child-theme.min.js'))
-    .pipe(uglify())
+    .pipe(terser())
     .pipe(gulp.dest(paths.js));
 
   return gulp
