@@ -1,5 +1,23 @@
 footer {
+  #top-footer {
+    .text {
+      h3 {
+        font-size: 1.438rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 1.125rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
   #bottom-footer {
+    p {
+      font-size: 0.9rem;
+      font-weight: 300;
+    }
     p:last-child {
       margin-bottom: 0;
     }

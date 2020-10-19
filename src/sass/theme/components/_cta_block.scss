@@ -1,6 +1,6 @@
 section[id*='cta_block'] {
-  padding-top: $section-spacing;
-  padding-bottom: $section-spacing;
+  padding-top: var(--section-spacing);
+  padding-bottom: var(--section-spacing);
 
   h2 {
     margin-bottom: 1rem;

@@ -59,6 +59,12 @@ a {
 
 .row,
 section {
+  --section-spacing: #{$section-spacing};
+
+  @media (max-width: 768px) {
+    --section-spacing: #{$section-spacing * 0.5};
+  }
+
   &.light-blue-bg {
     background: $light-blue;
   }
@@ -78,17 +84,42 @@ section {
 }
 
 .section-padding-top {
-  padding-top: $section-spacing;
+  padding-top: var(--section-spacing);
 }
 
 .section-padding-bottom {
-  padding-bottom: $section-spacing;
+  padding-bottom: var(--section-spacing);
 }
 
 .section-margin-top {
-  margin-top: $section-spacing;
+  margin-top: var(--section-spacing);
 }
 
 .section-margin-bottom {
-  margin-bottom: $section-spacing;
+  margin-bottom: var(--section-spacing);
+}
+
+.social-media {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+
+  li {
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 100%;
+      background: $white;
+      color: $med-blue;
+      text-decoration: none;
+      &:hover {
+        color: $dark-blue;
+      }
+    }
+  }
 }
