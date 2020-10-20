@@ -94,6 +94,7 @@ function add_new_image_sizes() {
     add_image_size( 'x-large', 1920, 999999 );
     add_image_size( 'slider', 600, 600, true);
     add_image_size( 'slider-blog', 700, 388, true);
+    add_image_size( 'logo', 250, 167);
 
     remove_image_size('2048x2048');
     remove_image_size('1536x1536');
