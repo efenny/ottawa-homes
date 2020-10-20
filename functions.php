@@ -27,6 +27,7 @@ function theme_enqueue_styles() {
     wp_enqueue_style( 'child-understrap-styles', get_stylesheet_directory_uri() . '/build/css/child-theme.min.css', array(), false);
     wp_enqueue_style( 'child-understrap-styles', get_stylesheet_directory_uri() . '/style.css', array(), false);
     wp_enqueue_script( 'jquery');
+    wp_enqueue_script( 'swiper-scripts', get_stylesheet_directory_uri() . '/build/js/swiper.min.js', array(), $the_theme->get( 'Version' ), true );
     wp_enqueue_script( 'child-understrap-scripts', get_stylesheet_directory_uri() . '/build/js/child-theme.min.js', array(), $the_theme->get( 'Version' ), true );
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
@@ -45,6 +46,9 @@ $cpts = array(
 );
 
 require_once('cpt.php'); 
+
+// for the excerpts and read mor for blogs
+
 
 // note that all of these custom options pages store their data in options 
 // so you'll need to make sure the field have unique fields
@@ -88,6 +92,11 @@ if( function_exists('acf_add_options_page') ) {
 add_action( 'after_setup_theme', 'add_new_image_sizes' );
 function add_new_image_sizes() {
     add_image_size( 'x-large', 1920, 999999 );
+    add_image_size( 'slider', 600, 600, true);
+
+    remove_image_size('2048x2048');
+    remove_image_size('1536x1536');
+    remove_image_size('medium_large');
 }
 
 function add_child_theme_textdomain() {
