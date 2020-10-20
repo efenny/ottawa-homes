@@ -24,28 +24,27 @@ global $wp_query;
       </div>
     </section>
 
-    <section class="section-padding-top section-padding-bottom">
+    <section id="team_members" class="section-padding-top section-padding-bottom">
       <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <?php
+        <div class="row no-gutters">
+          <?php
             if ( $wp_query->have_posts() ) { 
               while ( $wp_query->have_posts() ) {
                     $wp_query->the_post(); ?>
-            <a href="<?php echo get_the_permalink(); ?>" class="col-12 col-md-4 d-flex">
-              <div class="card w-100 border-none">
-                <img class="card-img-top" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="Card image cap">
-                <div class="card-body">
-                  <h3 class="card-title"><?php echo get_the_title(); ?></h3>
-                  <p class="card-text"><?php echo get_field('role'); ?></p>
-                </div>
+          <a href="<?php echo get_the_permalink(); ?>" class="col-12 col-md-4 d-flex team-member">
+            <div class="card w-100 text-center border-0">
+              <img class="card-img-top" src="<?php echo get_the_post_thumbnail_url(); ?>"
+                alt="<?php echo get_the_title(); ?>">
+              <div class="card-body px-0">
+                <h3 class="card-title "><?php echo get_the_title(); ?></h3>
+                <p class="card-text"><?php echo get_field('role'); ?></p>
               </div>
-            </a>
-            <?php }
+            </div>
+          </a>
+          <?php }
             }
             wp_reset_postdata();
             ?>
-          </div>
         </div>
       </div>
     </section>

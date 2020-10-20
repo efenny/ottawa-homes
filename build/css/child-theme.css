@@ -11697,7 +11697,14 @@ a.btn {
   font-weight: 700;
   font-size: 1.125rem;
   padding: 1.125rem 1.25rem;
-  text-transform: capitalize; }
+  text-transform: capitalize;
+  color: #182947;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out; }
+  a.btn:hover {
+    color: #dc1c2e; }
+  a.btn.btn-secondary, a.btn.btn-primary {
+    color: #fff; }
 
 a.btn.btn-white {
   background: #fff;
@@ -12190,5 +12197,18 @@ section {
   .wpcf7 .wpcf7-validation-errors {
     color: #dc3545;
     border: 1px solid #e9ecef; }
+
+.post-type-archive-team_members #team_members .row {
+  gap: 2rem; }
+
+.post-type-archive-team_members .team-member {
+  text-decoration: none !important; }
+  .post-type-archive-team_members .team-member:hover .card-title {
+    color: #dc1c2e; }
+  .post-type-archive-team_members .team-member .card-title {
+    -webkit-transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out; }
+  .post-type-archive-team_members .team-member .card-text {
+    color: #182947; }
 
 /*# sourceMappingURL=child-theme.css.map */

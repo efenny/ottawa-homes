@@ -1,0 +1,23 @@
+#team_members {
+  .row {
+    gap: 2rem;
+  }
+}
+
+.team-member {
+  text-decoration: none !important;
+
+  &:hover {
+    .card-title {
+      color: $primary;
+    }
+  }
+
+  .card-title {
+    transition: color 0.3s ease-in-out;
+  }
+
+  .card-text {
+    color: $dark-blue;
+  }
+}

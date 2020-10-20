@@ -4,6 +4,17 @@ a.btn {
   font-size: 1.125rem;
   padding: 1.125rem 1.25rem;
   text-transform: capitalize;
+  color: $dark-blue;
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: $primary;
+  }
+
+  &.btn-secondary,
+  &.btn-primary {
+    color: $white;
+  }
 }
 
 a.btn.btn-white {
