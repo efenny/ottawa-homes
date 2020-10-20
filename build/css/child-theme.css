@@ -11752,6 +11752,10 @@ section[id*='cta_block'] {
     font-size: 1.125rem !important;
     line-height: 1.556 !important; }
 
+#slider-gallery-latest_blog_posts .swiper-wrapper .swiper-slide,
+#slider-gallery-featured_properties .swiper-wrapper .swiper-slide {
+  padding-right: 2rem !important; }
+
 .swiper-slide {
   -webkit-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out; }
@@ -11760,6 +11764,57 @@ section[id*='cta_block'] {
 
 .swiper-overflow .swiper-container {
   overflow: initial; }
+
+.swiper-container .property:hover img {
+  -webkit-filter: brightness(0.6);
+          filter: brightness(0.6); }
+
+.swiper-container .property:hover .info {
+  opacity: 1; }
+
+.swiper-container .property img {
+  -webkit-transition: -webkit-filter 0.3s ease-in-out;
+  transition: -webkit-filter 0.3s ease-in-out;
+  transition: filter 0.3s ease-in-out;
+  transition: filter 0.3s ease-in-out, -webkit-filter 0.3s ease-in-out; }
+
+.swiper-container .property .extra {
+  position: absolute;
+  top: 2rem;
+  left: -0.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+.swiper-container .property .info {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out; }
+
+.blog-item {
+  text-decoration: none !important;
+  outline: none !important; }
+  .blog-item:hover img {
+    -webkit-filter: brightness(0.6);
+            filter: brightness(0.6); }
+  .blog-item:hover .read-more {
+    color: #dc1c2e; }
+  .blog-item img {
+    -webkit-transition: -webkit-filter 0.3s ease-in-out;
+    transition: -webkit-filter 0.3s ease-in-out;
+    transition: filter 0.3s ease-in-out;
+    transition: filter 0.3s ease-in-out, -webkit-filter 0.3s ease-in-out; }
+  .blog-item p {
+    color: #182947; }
+  .blog-item .read-more {
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: #182947;
+    -webkit-transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out; }
 
 .notifcation-bar {
   background: #4076aa;

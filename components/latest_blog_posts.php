@@ -8,7 +8,7 @@
     </div>
   </div>
 
-  <div class="swiper swiper-overflow py-5">
+  <div class="swiper swiper-overflow">
     <div class="container">
       <div class="swiper-container row" id="slider-gallery-latest_blog_posts">
         <div class="swiper-wrapper">
@@ -23,14 +23,14 @@
               while ( $query->have_posts() ) {
                   $query->the_post(); ?>
 
-          <div class="swiper-slide col-11 col-md-4">
-            <a href="<?php echo get_the_permalink(); ?>" class="item-wrapper position-relative">
-              <img class="w-100" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'slider') ?>"
+          <div class="swiper-slide col-11 col-md-4 p-0">
+            <a href="<?php echo get_the_permalink(); ?>" class="item-wrapper blog-item position-relative">
+              <img class="w-100 mb-3" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'slider-blog') ?>"
                 alt="<?php echo get_the_title(); ?>" />
               <div class="info">
-                <h3><?php echo get_the_title(); ?></h3>
+                <h3 class="h4 mb-2"><?php echo get_the_title(); ?></h3>
                 <p><?php echo wp_trim_words(get_the_content(), 15, '...') ?></p>
-                <div class="btn read-more">Read More ></div>
+                <div class="read-more">Read More ></div>
               </div>
             </a>
           </div>
