@@ -11689,6 +11689,8 @@ figure.woocommerce-product-gallery__wrapper {
 
 .section-col-text-img figure {
   margin: 0; }
+  .section-col-text-img figure img {
+    width: 100%; }
 
 a.btn {
   border-radius: 0;
