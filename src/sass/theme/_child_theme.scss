@@ -1,10 +1,12 @@
 // custom child theme styles go here
+@import 'mixins/_mixins';
 @import 'components/_col_text_button_col_img';
 @import 'components/_buttons';
 @import 'components/_cta_block';
 @import 'components/_page_header';
 @import 'components/_slider';
 @import 'components/_header';
+@import 'components/_social-share';
 @import 'components/_footer';
 
 body {
@@ -125,26 +127,5 @@ section {
 }
 
 .social-media {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-
-  li {
-    a {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 2rem;
-      height: 2rem;
-      border-radius: 100%;
-      background: $white;
-      color: $med-blue;
-      text-decoration: none;
-      &:hover {
-        color: $dark-blue;
-      }
-    }
-  }
+  @include social_media;
 }

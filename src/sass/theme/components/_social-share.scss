@@ -1,0 +1,17 @@
+.social-share {
+  ul {
+    @include social_media;
+
+    li {
+      a {
+        background: $primary;
+        color: $white;
+
+        &:hover {
+          color: $white;
+          background: $dark-blue;
+        }
+      }
+    }
+  }
+}

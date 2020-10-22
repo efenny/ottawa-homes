@@ -1,0 +1,24 @@
+@mixin social_media {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+
+  li {
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 100%;
+      background: $white;
+      color: $med-blue;
+      text-decoration: none;
+      &:hover {
+        color: $dark-blue;
+      }
+    }
+  }
+}
