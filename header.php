@@ -44,37 +44,38 @@ $container = get_theme_mod('understrap_container_type');
 
 
 
-    <header id="wrapper-navbar" class="thenav scroll goDown" itemscope itemtype="http://schema.org/WebSite">
+    <div class="header-wrapper">
+      <header id="wrapper-navbar" class="thenav scroll goDown" itemscope itemtype="http://schema.org/WebSite">
 
-      <a class="skip-link sr-only sr-only-focusable"
-        href="#content"><?php esc_html_e('Skip to content', 'understrap'); ?></a>
+        <a class="skip-link sr-only sr-only-focusable"
+          href="#content"><?php esc_html_e('Skip to content', 'understrap'); ?></a>
 
 
 
-      <nav class="navbar  navbar-expand-md bg-white">
+        <nav class="navbar  navbar-expand-md bg-white">
 
-        <!-- Your site title as branding in the menu -->
-        <?php if (!has_custom_logo()) { ?>
+          <!-- Your site title as branding in the menu -->
+          <?php if (!has_custom_logo()) { ?>
 
-        <a href="<?php echo get_site_url(); ?>">
-          <img src="<?php echo get_field('global_header', 'options')['logo']['url']; ?>"
-            alt="<?php echo get_bloginfo('name'); ?> logo">
-        </a>
-        <?php } else {
+          <a href="<?php echo get_site_url(); ?>">
+            <img src="<?php echo get_field('global_header', 'options')['logo']['url']; ?>"
+              alt="<?php echo get_bloginfo('name'); ?> logo">
+          </a>
+          <?php } else {
 						the_custom_logo();
 					} ?>
-        <!-- end custom logo -->
+          <!-- end custom logo -->
 
-        <a id="burgertoggler" href="#" class="navbar-toggler mobile-square burger d-flex d-md-none"
-          data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
-          aria-expanded="false" aria-label="Toggle navigation">
-          <div class="mobile-burger">
-            <span class="burger-bars">
-            </span>
-          </div>
-        </a>
+          <a id="burgertoggler" href="#" class="navbar-toggler mobile-square burger d-flex d-md-none"
+            data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <div class="mobile-burger">
+              <span class="burger-bars">
+              </span>
+            </div>
+          </a>
 
-        <?php wp_nav_menu(
+          <?php wp_nav_menu(
 						array(
 							'theme_location'  => 'primary',
 							'container_class' => 'collapse navbar-collapse',
@@ -87,6 +88,7 @@ $container = get_theme_mod('understrap_container_type');
 						)
 					); ?>
 
-      </nav><!-- .site-navigation -->
+        </nav><!-- .site-navigation -->
 
-    </header><!-- #wrapper-navbar end -->
+      </header><!-- #wrapper-navbar end -->
+    </div>

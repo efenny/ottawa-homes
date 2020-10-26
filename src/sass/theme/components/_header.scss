@@ -16,6 +16,12 @@
   }
 }
 
+.header-wrapper {
+  &.is-scrolling {
+    padding-bottom: 140px;
+  }
+}
+
 header {
   padding: 0.5rem 1rem;
   z-index: 9999;

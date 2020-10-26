@@ -3,7 +3,9 @@
   <div class="container position-relative">
     <div class="row">
       <div class="col-12 text-white">
-        <h3>cat?</h3>
+        <?php if(is_single()) : ?>
+        <h3>cat</h3>
+        <?php endif; ?>
         <h1><?php echo get_the_title(); ?></h1>
       </div>
     </div>

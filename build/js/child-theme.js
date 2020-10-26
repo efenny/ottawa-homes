@@ -7056,14 +7056,17 @@ window.onscroll = function () {
 };
 
 const $header = document.querySelector('header');
+const $headerWrapper = document.querySelector('.header-wrapper');
 const $totop = document.getElementById('toTop');
 
 function changesOnScroll() {
   if (document.documentElement.scrollTop > 300) {
     $header.classList.add('scroll', 'goDown');
+    $headerWrapper.classList.add('is-scrolling');
     $totop.classList.add('show');
   } else {
     $header.classList.remove('scroll', 'goDown');
+    $headerWrapper.classList.remove('is-scrolling');
     $totop.classList.remove('show');
     lastPosition[0] = document.documentElement.scrollTop;
   }

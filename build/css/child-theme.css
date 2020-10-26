@@ -11839,6 +11839,9 @@ section[id*='cta_block'] {
     .notifcation-bar p a {
       text-decoration: underline; }
 
+.header-wrapper.is-scrolling {
+  padding-bottom: 140px; }
+
 header {
   padding: 0.5rem 1rem;
   z-index: 9999;
@@ -12206,6 +12209,27 @@ section {
     text-decoration: none; }
     .social-media li a:hover {
       color: #182947; }
+
+#toTop {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  padding: 0.5rem;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: translateY(4rem);
+          transform: translateY(4rem);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  color: #4076aa; }
+  #toTop:hover {
+    color: #dc1c2e; }
+  #toTop.show {
+    -webkit-transform: translateY(0);
+            transform: translateY(0); }
 
 /*
 * Use existing Bootstrap 4 classes and
