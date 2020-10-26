@@ -11,8 +11,16 @@ $container = get_theme_mod('understrap_container_type');
 
 <div class="wrapper pb-0 pt-0" id="page-wrapper">
   <main class="site-main" id="main">
+    <?php $componentFile = get_stylesheet_directory() . '/components/breadcrumbs.php';
+        if (file_exists($componentFile)) {
+            include $componentFile;
+            wp_reset_postdata();
+        } ?>
+
     <section class="section-padding-top section-padding-bottom">
       <div class="container">
+
+
         <div class="row"><?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
           <article class="col-12 col-md-8 mb-4 mb-md-0  -content">
@@ -21,7 +29,7 @@ $container = get_theme_mod('understrap_container_type');
                 'classes' => 'mt-2 mb-2'
               )); ?>
             <figure class="featured-image mb-3">
-              <?php echo get_the_post_thumbnail($post_id, 'large', array(
+              <?php echo get_the_post_thumbnail(get_the_ID(), 'large', array(
                   'alt' => get_the_title()
                 )); ?>
               <?php if(get_the_post_thumbnail_caption()): ?>

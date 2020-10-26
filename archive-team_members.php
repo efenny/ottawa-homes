@@ -14,6 +14,12 @@ global $wp_query;
 
 <div class="wrapper pb-0 pt-0" id="page-wrapper">
   <main class="site-main" id="main">
+    <?php $componentFile = get_stylesheet_directory() . '/components/breadcrumbs.php';
+        if (file_exists($componentFile)) {
+            include $componentFile;
+            wp_reset_postdata();
+        } ?>
+
 
     <section id="cta_block-1 ?>" class="med-blue-bg position-relative section-padding-top section-padding-bottom ">
       <div class="container">
