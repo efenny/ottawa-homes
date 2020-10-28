@@ -12294,6 +12294,30 @@ section {
   .post-type-archive-team_members .team-member .card-text {
     color: #182947; }
 
+.post-type-archive-our_listings .blog-item {
+  text-decoration: none !important;
+  outline: none !important; }
+  .post-type-archive-our_listings .blog-item a {
+    text-decoration: none !important; }
+  .post-type-archive-our_listings .blog-item:hover img {
+    -webkit-filter: brightness(0.6);
+            filter: brightness(0.6); }
+  .post-type-archive-our_listings .blog-item:hover .read-more {
+    color: #dc1c2e; }
+  .post-type-archive-our_listings .blog-item img {
+    -webkit-transition: -webkit-filter 0.3s ease-in-out;
+    transition: -webkit-filter 0.3s ease-in-out;
+    transition: filter 0.3s ease-in-out;
+    transition: filter 0.3s ease-in-out, -webkit-filter 0.3s ease-in-out; }
+  .post-type-archive-our_listings .blog-item p {
+    color: #182947; }
+  .post-type-archive-our_listings .blog-item .read-more {
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: #182947;
+    -webkit-transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out; }
+
 .single-our_listings .basic-details .seperator {
   display: inline-block;
   margin: 0 0.5rem; }

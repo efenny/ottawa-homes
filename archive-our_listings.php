@@ -8,7 +8,7 @@ get_header();
 $container = get_theme_mod('understrap_container_type');
 
 $args = array(
-    'post_type'         => 'post',
+    'post_type'         => 'our_listings',
     'posts_per_page'    => 10,
     'paged'             => $paged,
     'orderby'           => 'date',
@@ -31,7 +31,7 @@ $articles = new WP_Query($args );
       <div class="container">
         <div class="row">
           <div class="col-12 mb-4">
-            <h1>Our Blog</h1>
+            <h1>Our Listings</h1>
           </div>
 
           <?php  if ( $articles->have_posts() ) {
@@ -46,9 +46,9 @@ $articles = new WP_Query($args );
                   <?php echo  get_the_post_thumbnail(get_the_ID(), 'slider-blog') ?>
                 </div>
                 <div class="info">
-                  <h3 class="h4 mb-2"><?php echo get_the_title(); ?></h3>
-                  <p><?php echo wp_trim_words(get_the_content(), 15, '...') ?></p>
-                  <div class="read-more">Read More ></div>
+                  <h3 class="h4 mb-2">
+                    <?php echo get_the_title(); ?><?php echo get_field('price') ? ' - $'.number_format(get_field('price')) : ''; ?>
+                  </h3>
                 </div>
               </a>
             </article>

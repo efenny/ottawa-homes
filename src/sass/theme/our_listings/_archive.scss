@@ -1,0 +1,33 @@
+.blog-item {
+  text-decoration: none !important;
+  outline: none !important;
+
+  a {
+    text-decoration: none !important;
+  }
+
+  &:hover {
+    img {
+      filter: brightness(0.6);
+    }
+
+    .read-more {
+      color: $primary;
+    }
+  }
+
+  img {
+    transition: filter 0.3s ease-in-out;
+  }
+
+  p {
+    color: $dark-blue;
+  }
+
+  .read-more {
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: $dark-blue;
+    transition: color 0.3s ease-in-out;
+  }
+}

@@ -65,7 +65,8 @@ $basic_details = get_field('basic_details')
           <div class="col-12 col-md-6 -text">
             <div class="title">
               <h2 class="h4"><?php echo get_the_title(); ?></h2>
-              <h3 class="h2">$<?php echo number_format($basic_details['price']); ?></h3>
+              <?php if(get_field('price')): ?><h3 class="h2">$<?php echo number_format(get_field('price')); ?></h3>
+              <?php endif; ?>
             </div>
             <div class="basic-details mt-4">
               <div class="neighbourhood">

@@ -30,6 +30,27 @@
             "mime_types": ""
         },
         {
+            "key": "field_5f96f0378eade",
+            "label": "Price",
+            "name": "price",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
             "key": "field_5f80bf729f935",
             "label": "Description",
             "name": "description",
@@ -99,27 +120,6 @@
             },
             "layout": "row",
             "sub_fields": [
-                {
-                    "key": "field_5f96f0378eade",
-                    "label": "Price",
-                    "name": "price",
-                    "type": "number",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "min": "",
-                    "max": "",
-                    "step": ""
-                },
                 {
                     "key": "field_5f80beaeb3a07",
                     "label": "Address",
@@ -366,5 +366,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1603727430
+    "modified": 1603893183
 }
