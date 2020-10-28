@@ -12090,6 +12090,32 @@ footer #bottom-footer p:last-child {
 footer #bottom-footer a {
   text-decoration: underline; }
 
+.pagination-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0.5rem; }
+  .pagination-nav .page-numbers {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    color: #4076aa;
+    font-weight: 600;
+    -webkit-transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out;
+    text-decoration: none; }
+    .pagination-nav .page-numbers.current {
+      color: #182947; }
+      .pagination-nav .page-numbers.current:hover {
+        color: #182947; }
+    .pagination-nav .page-numbers:hover {
+      color: #dc1c2e; }
+
 body {
   color: #182947; }
   body .site::after {
@@ -12268,6 +12294,22 @@ section {
   .post-type-archive-team_members .team-member .card-text {
     color: #182947; }
 
+.single-our_listings .basic-details .seperator {
+  display: inline-block;
+  margin: 0 0.5rem; }
+
+.single-our_listings .map .iframe-wrapper {
+  width: 100%;
+  position: relative;
+  padding-bottom: 56.25%;
+  overflow: hidden; }
+  .single-our_listings .map .iframe-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0; }
+
 .single .featured-image img {
   width: 100%; }
 
@@ -12297,5 +12339,29 @@ section {
     color: #182947; }
     .single aside .cats a:hover {
       color: #dc1c2e; }
+
+.blog .blog-item {
+  text-decoration: none !important;
+  outline: none !important; }
+  .blog .blog-item a {
+    text-decoration: none !important; }
+  .blog .blog-item:hover img {
+    -webkit-filter: brightness(0.6);
+            filter: brightness(0.6); }
+  .blog .blog-item:hover .read-more {
+    color: #dc1c2e; }
+  .blog .blog-item img {
+    -webkit-transition: -webkit-filter 0.3s ease-in-out;
+    transition: -webkit-filter 0.3s ease-in-out;
+    transition: filter 0.3s ease-in-out;
+    transition: filter 0.3s ease-in-out, -webkit-filter 0.3s ease-in-out; }
+  .blog .blog-item p {
+    color: #182947; }
+  .blog .blog-item .read-more {
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: #182947;
+    -webkit-transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out; }
 
 /*# sourceMappingURL=child-theme.css.map */

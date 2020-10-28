@@ -1,0 +1,12 @@
+.basic-details {
+  .seperator {
+    display: inline-block;
+    margin: 0 0.5rem;
+  }
+}
+
+.map {
+  .iframe-wrapper {
+    @include iframe_16_9;
+  }
+}

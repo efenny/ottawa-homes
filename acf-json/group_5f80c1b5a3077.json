@@ -84,23 +84,9 @@
     "location": [
         [
             {
-                "param": "options_page",
+                "param": "taxonomy",
                 "operator": "==",
-                "value": "options_ottawa_neighbourhood"
-            }
-        ],
-        [
-            {
-                "param": "options_page",
-                "operator": "==",
-                "value": "options_kanata_neighbourhood"
-            }
-        ],
-        [
-            {
-                "param": "options_page",
-                "operator": "==",
-                "value": "options_stitts_neighbourhood"
+                "value": "category"
             }
         ]
     ],
@@ -112,5 +98,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1602274140
+    "modified": 1603731680
 }

@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-12 text-white">
         <?php if(is_single()) : ?>
-        <h3>cat</h3>
+        <h3><?php echo get_the_category()[0]->name; ?></h3>
         <?php endif; ?>
         <h1><?php echo get_the_title(); ?></h1>
       </div>

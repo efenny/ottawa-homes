@@ -1,6 +1,6 @@
 {
     "key": "group_5f80bd8f4baf0",
-    "title": "Ottawa Listing",
+    "title": "Our Listing",
     "fields": [
         {
             "key": "field_5f80bd9ab39ff",
@@ -99,6 +99,27 @@
             },
             "layout": "row",
             "sub_fields": [
+                {
+                    "key": "field_5f96f0378eade",
+                    "label": "Price",
+                    "name": "price",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": ""
+                },
                 {
                     "key": "field_5f80beaeb3a07",
                     "label": "Address",
@@ -325,7 +346,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "ottawa_listings"
+                "value": "our_listings"
             }
         ]
     ],
@@ -345,5 +366,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1602273550
+    "modified": 1603727430
 }

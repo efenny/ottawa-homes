@@ -35,13 +35,14 @@ function theme_enqueue_styles() {
 }
 
 $neighbourhoods = array(
-    'ottawa' => "Ottawa",
-    'kanata' => "Kanata",
-    'stitts' => "Stittsville",
+    'neighbourhoods' => "Neighbourhoods",
+    // 'kanata' => "Kanata",
+    // 'stitts' => "Stittsville",
 );
 
 $cpts = array(
     'our_listings' => array('Our Listing', 'dashicons-format-aside', true),
+    'neighbourhoods' => array('Neighbourhood', 'dashicons-admin-multisite', true),
     'team_members' => array('Team Member', 'dashicons-admin-users')
 );
 
@@ -100,6 +101,9 @@ function add_new_image_sizes() {
     remove_image_size('1536x1536');
     remove_image_size('medium_large');
 }
+
+add_filter('wpcf7_autop_or_not', '__return_false');
+
 
 function add_child_theme_textdomain() {
     load_child_theme_textdomain( 'understrap-child', get_stylesheet_directory() . '/languages' );

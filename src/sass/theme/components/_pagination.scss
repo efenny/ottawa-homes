@@ -1,0 +1,27 @@
+.pagination-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  .page-numbers {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    color: $med-blue;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
+    text-decoration: none;
+
+    &.current {
+      color: $dark-blue;
+
+      &:hover {
+        color: $dark-blue;
+      }
+    }
+
+    &:hover {
+      color: $primary;
+    }
+  }
+}

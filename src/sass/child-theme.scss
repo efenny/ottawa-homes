@@ -20,6 +20,18 @@
   @import 'theme/team_members/single';
 }
 
+.post-type-archive-our_listings {
+  @import 'theme/our_listings/archive';
+}
+
+.single-our_listings {
+  @import 'theme/our_listings/single';
+}
+
 .single {
   @import 'theme/blog/single';
+}
+
+.blog {
+  @import 'theme/blog/archive';
 }
