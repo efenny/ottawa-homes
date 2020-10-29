@@ -1,33 +1,12 @@
 {
     "key": "group_5f80c1b5a3077",
-    "title": "Ottawa Neighbourhoods Options",
+    "title": "Ottawa Neighbourhoods Page",
     "fields": [
         {
-            "key": "field_5f80c2c351f8d",
-            "label": "Flexible Content",
-            "name": "flexible_content",
-            "type": "clone",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "clone": [
-                "field_5f80c32602db9"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 0
-        },
-        {
-            "key": "field_5f80c1cd51f8a",
-            "label": "Schools",
-            "name": "schools",
-            "type": "wysiwyg",
+            "key": "field_5f99d60e1e99b",
+            "label": "Kanata Map",
+            "name": "kanata_map",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -37,16 +16,16 @@
                 "id": ""
             },
             "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
-            "key": "field_5f80c27e51f8b",
-            "label": "Churches",
-            "name": "churches",
-            "type": "wysiwyg",
+            "key": "field_5f99d6231e99d",
+            "label": "Orleans Map",
+            "name": "orleans_map",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -56,16 +35,16 @@
                 "id": ""
             },
             "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
-            "key": "field_5f80c28551f8c",
-            "label": "Recreation Centres",
-            "name": "recreation_centres",
-            "type": "wysiwyg",
+            "key": "field_5f99d6231e99c",
+            "label": "Barrhaven Map",
+            "name": "barrhaven_map",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -75,18 +54,18 @@
                 "id": ""
             },
             "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
         [
             {
-                "param": "taxonomy",
+                "param": "page_template",
                 "operator": "==",
-                "value": "category"
+                "value": "page-templates\/ottawa-neighbourhoods.php"
             }
         ]
     ],
@@ -98,5 +77,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1603731680
+    "modified": 1603917373
 }

@@ -35,14 +35,14 @@ function theme_enqueue_styles() {
 }
 
 $neighbourhoods = array(
-    'neighbourhoods' => "Neighbourhoods",
+    'nieghbours' => "Neighbourhood",
     // 'kanata' => "Kanata",
     // 'stitts' => "Stittsville",
 );
 
 $cpts = array(
     'our_listings' => array('Our Listing', 'dashicons-format-aside', true),
-    'neighbourhoods' => array('Neighbourhood', 'dashicons-admin-multisite', true),
+    // 'neighbourhoods' => array('Neighbourhood', 'dashicons-admin-multisite', true),
     'team_members' => array('Team Member', 'dashicons-admin-users')
 );
 
