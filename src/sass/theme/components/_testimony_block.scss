@@ -1,0 +1,9 @@
+.testimoney-block {
+  .no-gutters {
+    .row {
+      @include media-breakpoint-down(md) {
+        @include make-container();
+      }
+    }
+  }
+}

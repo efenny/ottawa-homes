@@ -1,14 +1,14 @@
-<section id="cta_block-<?php echo $currItem; ?>"
-  class="med-blue-bg position-relative section-padding-top section-padding-bottom <?php echo get_sub_field('image') ? 'bg-image' : ''; ?>"
+<section id="testimony_block-<?php echo $currItem; ?>"
+  class="testimoney-block med-blue-bg position-relative section-padding-top section-padding-bottom <?php echo get_sub_field('image') ? 'bg-image' : ''; ?>"
   style="<?php echo get_sub_field('image') ? 'background-image: url('.get_sub_field('image')['url'].');' : ''; ?>">
   <div class="row no-gutters">
     <div class="col-12 col-md-10 offset-md-1">
       <div class="row">
         <?php if( have_rows('testimonies') ):  ?>
         <?php while( have_rows('testimonies') ) : the_row(); ?>
-        <div class="col-12 col-md-4 text-white text-center">
+        <div class="col-12 col-md-4 text-white text-center mb-4 mb-md-0">
           <div class="star-rating mb-3">
-            <?php echo get_sub_field('rating_out_of_5'); ?>
+            <?php for ($k = 0 ; $k < get_sub_field('rating_out_of_5'); $k++){ echo '<span class="pl-1 pr-1"><i class="fa fa-star"></i></span>'; } ?>
           </div>
           <?php echo get_sub_field('content'); ?>
           <div class="author-from">

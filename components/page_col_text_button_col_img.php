@@ -1,5 +1,5 @@
 <?php $section_margin = get_sub_field('section_margin'); ?>
-<section id="col_text-<?php echo $currItem; ?>"
+<section id="page-col_text-<?php echo $currItem; ?>"
   class="section-col-text-img position-relative <?php echo $section_margin['top'] ? 'section-margin-top' : '';?> <?php echo $section_margin['bottom'] ? 'section-margin-bottom' : ''; ?>">
   <div
     class="row no-gutters align-items-stretch <?php echo get_sub_field('blue_background') ? 'light-blue-bg': ''; ?> <?php echo get_sub_field('left_or_right_image') ? '' : 'flex-column-reverse flex-md-row'; ?>">
@@ -9,14 +9,14 @@
       <?php if(get_sub_field('left_or_right_image')) : ?>
 
       <div class="row text d-flex align-items-center h-100">
-        <div class="col-12 col-md-9 offset-md-1 mt-5 mb-5">
+        <div class="col-12 col-md-9 offset-md-2  mt-5 mb-5">
           <?php echo get_sub_field('text') ? get_sub_field('text') : ''; ?>
           <?php if( have_rows('buttons') ):  ?>
           <div class="button-wrapper mt-4">
             <?php while( have_rows('buttons') ) : the_row();
                     $button = get_sub_field('button'); ?>
             <a href="<?php echo $button['url'] ?>" target="<?php echo $button['target'] ?>"
-              class="btn <?php echo get_sub_field('button_class') ?>"><?php echo $button['title'] ?></a>
+              class="btn <?php echo get_sub_field('button_class') ? get_sub_field('button_class') : 'btn-secondary'; ?>"><?php echo $button['title'] ?></a>
             <?php endwhile; ?>
           </div>
           <?php endif; ?>
@@ -26,11 +26,15 @@
       <?php else: ?>
       <?php $image =  get_sub_field('image');
             if($image) { ?>
-      <figure class="d-flex h-100">
-        <?php echo wp_get_attachment_image($image, 'x-large'); ?>
-      </figure>
-
+      <div class="row h-100 d-flex">
+        <div class="col-12 col-md-11">
+          <figure class="d-flex h-100">
+            <?php  echo wp_get_attachment_image($image['ID'], 'x-large'); ?>
+          </figure>
+        </div>
+      </div>
       <?php } ?>
+
       <?php endif; ?>
     </div>
 
@@ -40,15 +44,15 @@
 
       <?php if(!get_sub_field('left_or_right_image')) : ?>
 
-      <div class="row text d-flex align-items-center  h-100">
-        <div class="col-12 col-md-10 offset-md-1  mt-5 mb-5">
+      <div class="row text d-flex align-items-center h-100">
+        <div class="col-12 col-md-9 offset-md-1 mt-5 mb-5">
           <?php echo get_sub_field('text') ? get_sub_field('text') : ''; ?>
           <?php if( have_rows('buttons') ):  ?>
           <div class="button-wrapper mt-4">
             <?php while( have_rows('buttons') ) : the_row();
                     $button = get_sub_field('button'); ?>
             <a href="<?php echo $button['url'] ?>" target="<?php echo $button['target'] ?>"
-              class="btn <?php echo get_sub_field('button_class') ?>"><?php echo $button['title'] ?></a>
+              class="btn <?php echo get_sub_field('button_class') ? get_sub_field('button_class') : 'btn-secondary'; ?>"><?php echo $button['title'] ?></a>
             <?php endwhile; ?>
           </div>
           <?php endif; ?>
@@ -58,13 +62,16 @@
       <?php else: ?>
       <?php $image =  get_sub_field('image');
             if($image) { ?>
-      <figure class="d-flex h-100">
-        <?php echo wp_get_attachment_image($image, 'x-large'); ?>
-      </figure>
+      <div class="row h-100 d-flex">
+        <div class="col-12 col-md-11 offset-md-1">
+          <figure class="d-flex h-100">
+            <?php  echo wp_get_attachment_image($image['ID'], 'x-large'); ?>
+          </figure>
+        </div>
+      </div>
       <?php } ?>
 
       <?php endif; ?>
     </div>
-
   </div>
 </section>

@@ -6,6 +6,7 @@
 @import 'components/_page_header';
 @import 'components/_slider';
 @import 'components/_header';
+@import 'components/_testimony_block';
 @import 'components/_social-share';
 @import 'components/_footer';
 @import 'components/_pagination';
@@ -72,9 +73,10 @@ h3,
 
 .row,
 section {
+  overflow: hidden;
   --section-spacing: #{$section-spacing};
 
-  @media (max-width: 768px) {
+  @include media-breakpoint-down(md) {
     --section-spacing: #{$section-spacing * 0.5};
   }
 
