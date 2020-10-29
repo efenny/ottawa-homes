@@ -16,7 +16,7 @@
             <?php while( have_rows('buttons') ) : the_row();
                     $button = get_sub_field('button'); ?>
             <a href="<?php echo $button['url'] ?>" target="<?php echo $button['target'] ?>"
-              class="btn <?php echo get_sub_field('button_class') ?>"><?php echo $button['title'] ?></a>
+              class="btn <?php echo get_sub_field('button_class') ? get_sub_field('button_class') : 'btn-secondary'; ?>"><?php echo $button['title'] ?></a>
             <?php endwhile; ?>
           </div>
           <?php endif; ?>
@@ -48,7 +48,7 @@
             <?php while( have_rows('buttons') ) : the_row();
                     $button = get_sub_field('button'); ?>
             <a href="<?php echo $button['url'] ?>" target="<?php echo $button['target'] ?>"
-              class="btn <?php echo get_sub_field('button_class') ?>"><?php echo $button['title'] ?></a>
+              class="btn <?php echo get_sub_field('button_class') ? get_sub_field('button_class') : 'btn-secondary'; ?>"><?php echo $button['title'] ?></a>
             <?php endwhile; ?>
           </div>
           <?php endif; ?>
