@@ -26,7 +26,8 @@ $basic_details = get_field('basic_details')
                   $size = 'slider';
                   if( $images ): ?>
                   <?php foreach( $images as $image_id ): ?>
-                  <div class="swiper-slide">
+                  <div class="swiper-slide large-images"
+                    data-src="<?php echo wp_get_attachment_image_src($image_id['ID'], 'full')[0]; ?>">
 
                     <?php echo wp_get_attachment_image( $image_id['ID'], $size ); ?>
                   </div>

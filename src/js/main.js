@@ -110,3 +110,47 @@ var awardsSlider = new Swiper('#slider-gallery-awards', {
   loop: true,
   slidesPerView: 'auto',
 });
+
+var our_listingGalleryNav = new Swiper('.single-our_listings .gallery-thumbs', {
+  speed: 400,
+  grabCursor: true,
+  loopedSlides: 2,
+  slidesPerView: 4,
+  watchSlidesVisibility: true,
+  watchSlidesProgress: true,
+});
+var our_listingGalleryMain = new Swiper('.single-our_listings .gallery-top', {
+  speed: 400,
+  grabCursor: true,
+  loopedSlides: 2,
+  thumbs: {
+    swiper: our_listingGalleryNav,
+  },
+});
+console.log('fired');
+
+const gallerImage = document.querySelectorAll('.gallery-top .large-images');
+
+gallerImage.forEach((image) => {
+  image.addEventListener('click', function () {
+    const imageArray = Array.from(
+      document.querySelectorAll('.gallery-top .large-images')
+    );
+
+    const dynamicElArray = imageArray.map((item) => {
+      const obj = {
+        src: item.dataset.src,
+        thumb: item.querySelector('img').src,
+      };
+      return obj;
+    });
+
+    console.log(dynamicElArray);
+
+    lightGallery(document.querySelector('.gallery-top'), {
+      dynamic: true,
+      selector: '.large-images',
+      dynamicEl: dynamicElArray,
+    });
+  });
+});
