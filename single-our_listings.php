@@ -7,7 +7,6 @@ get_header();
 
 $container = get_theme_mod('understrap_container_type');
 
-include get_stylesheet_directory() . '/components/page-header.php';
 setlocale(LC_MONETARY, get_locale());
 
 $basic_details = get_field('basic_details')
@@ -44,7 +43,7 @@ $basic_details = get_field('basic_details')
                   if( $images ): ?>
                   <?php foreach( $images as $image_id ): ?>
                   <div class="swiper-slide">
-                    <?php echo wp_get_attachment_image( $image_id['ID'], 'thumbnail' ); ?>
+                    <?php echo wp_get_attachment_image( $image_id['ID'], 'logo' ); ?>
                   </div>
                   <?php endforeach; ?>
                   <?php endif; ?>
@@ -115,8 +114,10 @@ $basic_details = get_field('basic_details')
         </div>
         <?php endif; ?>
         <div class="row map">
-          <div class="iframe-wrapper">
-            <?php echo get_field('map_iframe'); ?>
+          <div class="col-12">
+            <div class="iframe-wrapper">
+              <?php echo get_field('map_iframe'); ?>
+            </div>
           </div>
         </div>
       </div>

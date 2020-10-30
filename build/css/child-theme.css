@@ -11722,9 +11722,9 @@ section[id*='cta_block'] {
 #page-header,
 #homepage-header {
   overflow: hidden; }
-  #page-header::before, #page-header::after,
-  #homepage-header::before,
-  #homepage-header::after {
+  #page-header.large::before, #page-header.large::after,
+  #homepage-header.large::before,
+  #homepage-header.large::after {
     content: '';
     -webkit-transform: skew(-20deg);
             transform: skew(-20deg);
@@ -11733,13 +11733,13 @@ section[id*='cta_block'] {
     opacity: 0.6;
     height: 100%;
     z-index: 0; }
-  #page-header::before,
-  #homepage-header::before {
+  #page-header.large::before,
+  #homepage-header.large::before {
     width: 10rem;
     background: #182947;
     left: 20rem; }
-  #page-header::after,
-  #homepage-header::after {
+  #page-header.large::after,
+  #homepage-header.large::after {
     width: 40rem;
     background: #dc1c2e;
     left: -25rem;

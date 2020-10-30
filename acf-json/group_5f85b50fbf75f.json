@@ -3,6 +3,25 @@
     "title": "Flexible Content",
     "fields": [
         {
+            "key": "field_5f9c369e96cee",
+            "label": "Large Heading?",
+            "name": "large_heading",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_5f85b519e9f39",
             "label": "Flexible Content Components",
             "name": "flexible_content_components",
@@ -1058,5 +1077,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1604002572
+    "modified": 1604073142
 }
