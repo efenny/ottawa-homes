@@ -1,4 +1,4 @@
-a.btn {
+.btn {
   border-radius: 0;
   font-weight: 700;
   font-size: 1.125rem;
@@ -6,6 +6,7 @@ a.btn {
   text-transform: capitalize;
   color: $dark-blue;
   transition: color 0.3s ease-in-out;
+  height: auto;
 
   &:hover {
     color: $primary;
@@ -17,7 +18,7 @@ a.btn {
   }
 }
 
-a.btn.btn-white {
+.btn.btn-white {
   background: $white;
   color: $med-blue;
 

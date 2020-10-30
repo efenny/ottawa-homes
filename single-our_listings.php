@@ -125,11 +125,11 @@ $basic_details = get_field('basic_details')
     <?php $our_listings = get_field('our_listings', 'options') ?>
     <section id="contact_block" class="section-padding-top section-padding-bottom light-blue-bg position-relative ">
       <div class="container">
-        <div class="row">
-          <div class="col-12 col-md-7">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-6 mb-3 mb-md-0">
             <?php echo $our_listings['text'] ? $our_listings['text'] : ''; ?>
           </div>
-          <div class="col-12 col-md-5">
+          <div class="col-12 col-md-5 offset-md-1">
             <?php echo $our_listings['form_shortcode'] ? do_shortcode($our_listings['form_shortcode']) : 'Please add a form shortcode'; ?>
           </div>
         </div>
