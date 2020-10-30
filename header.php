@@ -46,17 +46,14 @@ $container = get_theme_mod('understrap_container_type');
 
     <div class="header-wrapper">
       <header id="wrapper-navbar" class="thenav scroll goDown" itemscope itemtype="http://schema.org/WebSite">
-
-        <a class="skip-link sr-only sr-only-focusable"
-          href="#content"><?php esc_html_e('Skip to content', 'understrap'); ?></a>
-
-
-
+        <div class="search-bar">
+          <?php echo get_search_form(); ?>
+          <button class="close-search-btn">
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
         <nav class="navbar  navbar-expand-md bg-white">
-
-          <!-- Your site title as branding in the menu -->
           <?php if (!has_custom_logo()) { ?>
-
           <a href="<?php echo get_site_url(); ?>">
             <img src="<?php echo get_field('global_header', 'options')['logo']['url']; ?>"
               alt="<?php echo get_bloginfo('name'); ?> logo">
@@ -64,18 +61,19 @@ $container = get_theme_mod('understrap_container_type');
           <?php } else {
 						the_custom_logo();
 					} ?>
-          <!-- end custom logo -->
 
-          <a id="burgertoggler" href="#" class="navbar-toggler mobile-square burger d-flex d-md-none"
-            data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <div class="mobile-burger">
-              <span class="burger-bars">
-              </span>
-            </div>
-          </a>
+          <div class="right-wrapper d-flex align-items-center">
+            <div class="menu-wrapper">
+              <a id="burgertoggler" href="#" class="navbar-toggler mobile-square burger d-flex d-md-none"
+                data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <div class="mobile-burger">
+                  <span class="burger-bars">
+                  </span>
+                </div>
+              </a>
 
-          <?php wp_nav_menu(
+              <?php wp_nav_menu(
 						array(
 							'theme_location'  => 'primary',
 							'container_class' => 'collapse navbar-collapse',
@@ -87,6 +85,13 @@ $container = get_theme_mod('understrap_container_type');
 							'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
 						)
 					); ?>
+            </div>
+            <div class="search-wrapper">
+              <button class="search-btn">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+          </div>
 
         </nav><!-- .site-navigation -->
 

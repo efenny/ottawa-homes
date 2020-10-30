@@ -7119,6 +7119,18 @@ function mobileMenuFunc() {
   }
 
   window.addEventListener('resize', mobileMenuFunc);
+
+  const searchBtn = document.querySelector('header .search-btn');
+  const searchBar = document.querySelector('header .search-bar');
+  const closeSearchBtn = document.querySelector('header .close-search-btn');
+
+  searchBtn.addEventListener('click', function () {
+    searchBar.classList.add('is-active');
+  });
+
+  closeSearchBtn.addEventListener('click', function () {
+    searchBar.classList.remove('is-active');
+  });
 }
 
 var featured_propertiesSlider = new Swiper(
