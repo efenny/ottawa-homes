@@ -12160,6 +12160,16 @@ nav.navbar {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center; }
+  @media (max-width: 991.98px) {
+    .wpcf7-form .item {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-align: start;
+          -ms-flex-align: start;
+              align-items: flex-start;
+      gap: 1rem; } }
 
 .wpcf7-form label {
   margin-bottom: 0; }
@@ -12212,6 +12222,10 @@ nav.navbar {
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat; }
+
+@media (max-width: 991.98px) {
+  .wpcf7-form .wpcf7-list-item.first {
+    margin-left: 0; } }
 
 .wpcf7-form input[type='submit'] {
   background: #4076aa;
