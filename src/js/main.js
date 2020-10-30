@@ -115,7 +115,7 @@ var our_listingGalleryNav = new Swiper('.single-our_listings .gallery-thumbs', {
   speed: 400,
   grabCursor: true,
   loopedSlides: 2,
-  slidesPerView: 4,
+  slidesPerView: 3,
   watchSlidesVisibility: true,
   watchSlidesProgress: true,
 });
@@ -127,7 +127,6 @@ var our_listingGalleryMain = new Swiper('.single-our_listings .gallery-top', {
     swiper: our_listingGalleryNav,
   },
 });
-console.log('fired');
 
 const gallerImage = document.querySelectorAll('.gallery-top .large-images');
 
@@ -145,8 +144,7 @@ gallerImage.forEach((image) => {
       return obj;
     });
 
-    console.log(dynamicElArray);
-
+    // https://sachinchoolur.github.io/lightgallery.js/ docs
     lightGallery(document.querySelector('.gallery-top'), {
       dynamic: true,
       selector: '.large-images',

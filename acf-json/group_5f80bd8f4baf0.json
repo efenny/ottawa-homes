@@ -15,7 +15,7 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
+            "return_format": "id",
             "preview_size": "medium",
             "insert": "append",
             "library": "all",
@@ -153,9 +153,7 @@
                         "id": ""
                     },
                     "post_type": [
-                        "stitts_neighbourhood",
-                        "kanata_neighbourhood",
-                        "ottawa_neighbourhood"
+                        "nieghbours"
                     ],
                     "taxonomy": "",
                     "allow_null": 0,
@@ -366,5 +364,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1603893183
+    "modified": 1604080161
 }

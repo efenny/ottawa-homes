@@ -74,6 +74,19 @@ header {
     form {
       margin-right: 1rem;
     }
+
+    .input-group {
+      display: flex;
+      align-items: center;
+
+      .form-control {
+        margin-right: 1rem;
+      }
+
+      .submit {
+        padding: 0.5rem 1rem !important;
+      }
+    }
   }
   .close-search-btn,
   .search-btn {

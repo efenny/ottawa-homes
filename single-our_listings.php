@@ -9,15 +9,34 @@ $container = get_theme_mod('understrap_container_type');
 
 setlocale(LC_MONETARY, get_locale());
 
-$basic_details = get_field('basic_details')
+$basic_details = get_field('basic_details');
 ?>
 
 <div class="wrapper pb-0 pt-0" id="page-wrapper">
   <main class="site-main" id="main">
+
+
+    <section id="page-header" class="large section-padding-top section-padding-bottom dark-blue-bg position-relative"
+      style="background-image:linear-gradient(90deg, #46494C 0%, rgba(70, 73, 76, 0) 68.74%), url('<?php echo get_the_post_thumbnail_url(get_the_ID(), 'x-large'); ?>');background-size: cover; background-position: center;">
+      <div class="container position-relative">
+        <div class="row">
+          <div class="col-12 text-white">
+            <?php if(is_single()) : ?>
+            <h3><?php echo get_the_category()[0]->name; ?></h3>
+            <?php endif; ?>
+            <h1><?php echo get_the_title(); ?></h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
     <section class="section-padding-top section-padding-bottom">
       <div class="container">
         <div class="row main-content">
-          <div class="col-12 col-md-6 -image">
+
+
+          <div class="col-12 col-md-6 gallery-col mb-5 mb-md-0">
             <div class="gallery-wrapper">
               <div class="swiper-container gallery-top">
                 <div class="swiper-wrapper">
@@ -27,9 +46,10 @@ $basic_details = get_field('basic_details')
                   if( $images ): ?>
                   <?php foreach( $images as $image_id ): ?>
                   <div class="swiper-slide large-images"
-                    data-src="<?php echo wp_get_attachment_image_src($image_id['ID'], 'full')[0]; ?>">
-
-                    <?php echo wp_get_attachment_image( $image_id['ID'], $size ); ?>
+                    data-src="<?php echo wp_get_attachment_image_src($image_id, 'full')[0]; ?>">
+                    <div class="img-wrapper">
+                      <?php echo wp_get_attachment_image( $image_id, $size ); ?>
+                    </div>
                   </div>
                   <?php endforeach; ?>
                   <?php endif; ?>
@@ -38,16 +58,23 @@ $basic_details = get_field('basic_details')
                 <div class="swiper-button-next swiper-button-white"></div>
                 <div class="swiper-button-prev swiper-button-white"></div>
               </div>
-              <div class="swiper-container gallery-thumbs">
-                <div class="swiper-wrapper">
-                  <?php 
+
+              <div class="gallery-thumb-wrapper">
+                <div class="swiper-container gallery-thumbs">
+                  <div class="swiper-wrapper">
+                    <?php 
                   if( $images ): ?>
-                  <?php foreach( $images as $image_id ): ?>
-                  <div class="swiper-slide">
-                    <?php echo wp_get_attachment_image( $image_id['ID'], 'logo' ); ?>
+                    <?php foreach( $images as $image_id ): ?>
+                    <div class="swiper-slide">
+                      <div class="inner-wrapper">
+                        <div class="img-wrapper">
+                          <?php echo wp_get_attachment_image( $image_id, 'logo' ); ?>
+                        </div>
+                      </div>
+                    </div>
+                    <?php endforeach; ?>
+                    <?php endif; ?>
                   </div>
-                  <?php endforeach; ?>
-                  <?php endif; ?>
                 </div>
               </div>
             </div>
@@ -62,6 +89,8 @@ $basic_details = get_field('basic_details')
             </div>
             <?php endif; ?>
           </div>
+
+
           <div class="col-12 col-md-6 -text">
             <div class="title">
               <h2 class="h4"><?php echo get_the_title(); ?></h2>
@@ -70,7 +99,9 @@ $basic_details = get_field('basic_details')
             </div>
             <div class="basic-details mt-4">
               <div class="neighbourhood">
-                <strong>Neighbourhood:</strong> <?php echo $basic_details['neighbourhood']; ?>
+                <strong>Neighbourhood:</strong>
+                <a href="<?php echo get_the_permalink($basic_details['neighbourhood']->ID); ?>"
+                  target="_blank"><?php echo $basic_details['neighbourhood']->post_title; ?></a>
               </div>
               <div class="details mt-2">
                 <?php $detail_array = array(
@@ -95,7 +126,7 @@ $basic_details = get_field('basic_details')
                 <?php echo get_field('description'); ?></div>
             </div>
           </div>
-          <div class="col-12 col-md-12 mt-5">
+          <div class="col-12 col-md-12 mt-3 mt-md-5">
             <a href="#" class="btn btn-primary btn-block">
               <svg width="21" height="25" viewBox="0 0 21 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -105,6 +136,8 @@ $basic_details = get_field('basic_details')
               Book an Appointment</a>
           </div>
         </div>
+
+
         <?php $more_details = get_field('more_details'); ?>
         <?php if($more_details['left_column'] || $more_details['right_column']) : ?>
         <div class="row py-5 more-details">
@@ -114,6 +147,8 @@ $basic_details = get_field('basic_details')
           </div>
         </div>
         <?php endif; ?>
+
+
         <div class="row map">
           <div class="col-12">
             <div class="iframe-wrapper">
