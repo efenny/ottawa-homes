@@ -1,0 +1,7 @@
+.card-block {
+  .row {
+    @include media-breakpoint-down(md) {
+      @include make-container();
+    }
+  }
+}
