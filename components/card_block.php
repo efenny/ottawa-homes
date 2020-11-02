@@ -5,11 +5,12 @@
   </div>
   <?php } ?>
   <div class="row no-gutters justify-content-around w-100">
+    <?php $cards_per_row = get_sub_fieild('cards_per_row'); ?>
     <?php 
             if( have_rows('cards') ):
             while( have_rows('cards') ) : the_row(); ?>
 
-    <div class="col-12 col-md-3 text-center">
+    <div class="col-12 col-md-<?php echo $cards_per_row ? 12/$cards_per_row : '3'; ?> mb-3 text-center">
       <figure class="mb-4">
         <img src="<?php echo get_sub_field('icon')['url']; ?>" alt="column icon">
       </figure>

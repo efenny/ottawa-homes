@@ -1,10 +1,15 @@
+$skew: -20deg;
+
 #page-header,
 #homepage-header {
   overflow: hidden;
 
-  $skew: -20deg;
-
   &.large {
+    min-height: 500px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
     &::before,
     &::after {
       content: '';
@@ -38,6 +43,30 @@
 #homepage-header {
   height: 80vh;
   min-height: 60vh;
+
+  &::before,
+  &::after {
+    content: '';
+    transform: skew($skew);
+    top: 0;
+    position: absolute;
+    opacity: 0.6;
+    height: 100%;
+    z-index: 0;
+  }
+
+  &::before {
+    width: 10rem;
+    background: $dark-blue;
+    left: 20rem;
+  }
+
+  &::after {
+    width: 40rem;
+    background: $primary;
+    left: -25rem;
+    opacity: 0.6;
+  }
 
   .row {
     z-index: 1;

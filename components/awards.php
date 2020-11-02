@@ -1,4 +1,4 @@
-<section id="col_text-<?php echo $currItem; ?>"
+<section id="awards-<?php echo $currItem; ?>"
   class="section-col-text-img position-relative section-padding-top section-padding-bottom">
   <div class="row no-gutters">
     <div class="col-12 col-md-10 offset-1">
@@ -6,12 +6,12 @@
         <div class="swiper-wrapper">
           <?php 
             
-            $images = get_sub_field('awards');
+            $imagessss = get_sub_field('awards');
             $size = 'logo';
             
-            foreach( $images as $image_id ): ?>
+            foreach( $imagessss as $image_id ): ?>
           <div class="swiper-slide col-4 col-md-2 text-center">
-            <?php echo wp_get_attachment_image( $image, $size ); ?>
+            <?php echo wp_get_attachment_image( $image_id['ID'], $size ); ?>
           </div>
           <?php endforeach; ?>
         </div>

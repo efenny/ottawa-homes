@@ -8,7 +8,6 @@ get_header();
 $container = get_theme_mod('understrap_container_type');
 
 global $wp_query;
-// var_dump($wp_query);
 
 ?>
 
@@ -32,12 +31,12 @@ global $wp_query;
 
     <section id="team_members" class="section-padding-top section-padding-bottom">
       <div class="container">
-        <div class="row no-gutters">
+        <div class="row">
           <?php
             if ( $wp_query->have_posts() ) { 
               while ( $wp_query->have_posts() ) {
                     $wp_query->the_post(); ?>
-          <a href="<?php echo get_the_permalink(); ?>" class="col-12 col-md-4 d-flex team-member">
+          <a href="<?php echo get_the_permalink(); ?>" class="col-12 col-md-4 d-flex mb-3 team-member">
             <div class="card w-100 text-center border-0">
               <img class="card-img-top" src="<?php echo get_the_post_thumbnail_url(); ?>"
                 alt="<?php echo get_the_title(); ?>">

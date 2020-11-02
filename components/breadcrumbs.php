@@ -1,5 +1,5 @@
 <?php  if ( function_exists('yoast_breadcrumb') ):?>
-<section class="breadcrumbs pt-3 pb-3">
+<section class="breadcrumbs mt-3 mb-3">
   <div class="container">
     <div class="row">
       <div class="col-12">

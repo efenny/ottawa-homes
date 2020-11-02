@@ -10,7 +10,7 @@
           <div class="star-rating mb-3">
             <?php for ($k = 0 ; $k < get_sub_field('rating_out_of_5'); $k++){ echo '<span class="pl-1 pr-1"><i class="fa fa-star"></i></span>'; } ?>
           </div>
-          <div class="content"><?php echo get_sub_field('content'); ?></div>
+          <div class="content px-0 px-md-5"><?php echo get_sub_field('content'); ?></div>
           <div class="author-from">
             <div class="author"><?php echo get_sub_field('author') ?></div>
             <div class="from"><?php echo get_sub_field('from') ?></div>

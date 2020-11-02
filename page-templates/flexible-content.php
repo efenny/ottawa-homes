@@ -22,8 +22,8 @@ if (is_front_page()) {
 ?>
 
 <div class="wrapper pb-0 pt-0" id="page-wrapper">
-    <main class="site-main" id="main">
-        <?php
+  <main class="site-main" id="main">
+    <?php
 
         // Check value exists.
         if (have_rows('flexible_content_components')) {
@@ -48,7 +48,17 @@ if (is_front_page()) {
 
         ?>
 
-    </main>
+    <section class="page-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <?php echo apply_filters( 'the_content', get_the_content() ) ?>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
 </div>
 

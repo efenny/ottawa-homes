@@ -97,6 +97,7 @@ function add_new_image_sizes() {
     add_image_size( 'slider', 600, 600, true);
     add_image_size( 'slider-blog', 700, 388, true);
     add_image_size( 'logo', 250, 167);
+    add_image_size( 'team', 370, 500);
 
     remove_image_size('2048x2048');
     remove_image_size('1536x1536');
@@ -110,3 +111,19 @@ function add_child_theme_textdomain() {
     load_child_theme_textdomain( 'understrap-child', get_stylesheet_directory() . '/languages' );
 }
 add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
+
+
+
+function catch_that_image() {
+  global $post, $posts;
+  $first_img = '';
+  ob_start();
+  ob_end_clean();
+  $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+  $first_img = $matches [1] [0];
+
+  if(empty($first_img)){ //Defines a default image
+    $first_img = "/images/default.jpg";
+  }
+  return $first_img;
+}
