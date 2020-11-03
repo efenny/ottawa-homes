@@ -1,11 +1,11 @@
 <section id="homepage-header"
-  class="d-flex align-items-center section-padding-top section-padding-bottom dark-blue-bg position-relative" style="
-    background-image:linear-gradient(90deg, #46494C 0%, rgba(70, 73, 76, 0) 68.74%),
-    url('<?php echo get_the_post_thumbnail_url(get_the_ID(), 'x-large'); ?>');
-    background-size: cover;
-    background-position: center;">
-  <div class="row position-relative w-100">
-    <div class="col-12 col-md-3 offset-md-1 text-white">
+  class="d-flex align-items-center section-padding-top section-padding-bottom dark-blue-bg position-relative">
+  <div class="image-bg-wrapper">
+    <img class="image-bg" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'x-large'); ?>"
+      alt="<?php echo get_the_title(); ?>">
+  </div>
+  <div class="row position-relative w-100 mb-5 mb-md-0">
+    <div class="col-12 col-md-5 col-lg-4 offset-md-1 text-white">
       <?php $header_section = get_field('header_section');
             if( have_rows('header_section') ): while( have_rows('header_section')): the_row(); ?>
       <h1><?php echo $header_section['title'] ? $header_section['title'] : get_the_title(); ?></h1>
