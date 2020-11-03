@@ -1,7 +1,7 @@
 <section id="awards-<?php echo $currItem; ?>"
   class="section-col-text-img position-relative section-padding-top section-padding-bottom">
   <div class="row no-gutters">
-    <div class="col-12 col-md-10 offset-1">
+    <div class="col-12 col-md-10 offset-md-1">
       <div class="swiper-container row" id="slider-gallery-awards">
         <div class="swiper-wrapper">
           <?php 

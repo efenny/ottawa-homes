@@ -16,9 +16,11 @@
             while( have_rows('cards') ) : the_row(); ?>
 
       <div class="col-12 col-md-<?php echo $cards_per_row ? 12/$cards_per_row : '4'; ?> mb-3 text-center">
+        <?php if(get_sub_field('icon')) : ?>
         <figure class="mb-4">
           <img src="<?php echo get_sub_field('icon')['url']; ?>" alt="column icon">
         </figure>
+        <?php endif; ?>
         <div class="col-text">
           <?php echo get_sub_field('text'); ?>
         </div>

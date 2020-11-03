@@ -1,0 +1,47 @@
+{
+    "key": "group_5fa0c6a46f41e",
+    "title": "Kanata Neighbourhoods",
+    "fields": [
+        {
+            "key": "field_5fa0c6b23aff3",
+            "label": "Flexible Content",
+            "name": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "flex",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "clone": "",
+            "prefix_label": 0,
+            "prefix_name": 0,
+            "display": "seamless",
+            "layout": "block"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "=="
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1604372185
+}

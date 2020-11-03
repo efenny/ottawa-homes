@@ -1087,10 +1087,15 @@
                 "param": "page_template",
                 "operator": "==",
                 "value": "page-templates\/flexible-content.php"
+            },
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates\/kanata.php"
             }
         ]
     ],
-    "menu_order": 2,
+    "menu_order": 1,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -1098,5 +1103,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1604351811
+    "modified": 1604372041
 }

@@ -104,12 +104,14 @@ var latest_blog_postsSlider = new Swiper('#slider-gallery-latest_blog_posts', {
   slidesPerView: 'auto',
 });
 
-var awardsSlider = new Swiper('#slider-gallery-awards', {
-  speed: 400,
-  grabCursor: true,
-  loop: true,
-  slidesPerView: 'auto',
-});
+if (window.innerWidth <= 768) {
+  var awardsSlider = new Swiper('#slider-gallery-awards', {
+    speed: 400,
+    grabCursor: true,
+    loop: true,
+    slidesPerView: 'auto',
+  });
+}
 
 var our_listingGalleryNav = new Swiper('.single-our_listings .gallery-thumbs', {
   speed: 400,
