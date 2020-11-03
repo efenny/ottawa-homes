@@ -31,3 +31,21 @@
     transition: color 0.3s ease-in-out;
   }
 }
+
+.button-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  a {
+    font-weight: 700;
+    color: $med-blue;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+
+    &.active,
+    &:hover {
+      color: $primary;
+    }
+  }
+}

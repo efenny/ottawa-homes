@@ -80,3 +80,19 @@
   overflow: hidden;
   padding-right: 3rem;
 }
+
+.lg-prev {
+  &::after {
+    content: '<';
+    font-weight: bold;
+    font-family: $font-family-sans-serif;
+  }
+}
+
+.lg-next {
+  &::before {
+    content: '>';
+    font-weight: bold;
+    font-family: $font-family-sans-serif;
+  }
+}

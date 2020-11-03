@@ -1,10 +1,5 @@
 <?php
 
-/**
- * Template name: Our Recent Sales
- * @package understrap-child
- */
-
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
 
@@ -17,9 +12,19 @@ $args = array(
     'posts_per_page'    => 10,
     'paged'             => $paged,
     'orderby'           => 'date',
-    'order'             => 'DESC'
+    'order'             => 'DESC',
+    'tax_query' => array(
+         array (
+            'taxonomy' => 'property_status',
+            'field' => 'slug',
+            'terms' => 'past-sold',
+        )
+    ),
 );
-$articles = new WP_Query($args);
+
+
+
+$articles = new WP_Query($args );
 
 ?>
 
@@ -63,10 +68,17 @@ $articles = new WP_Query($args);
           
           wp_reset_postdata();
           
-          } ?>
+          } else { ?>
+          <div class="col-12">
+            <h3 class="text-center">There are currently no properties that fit this criteria. Please check back soon.
+            </h3>
+          </div>
+          <?php } ?>
+          <?php if ( $articles->have_posts() ) : ?>
           <div class="col-12">
             <?php include get_stylesheet_directory() . '/components/pagination-nav.php'; ?>
           </div>
+          <?php endif; ?>
         </div>
       </div>
     </section>

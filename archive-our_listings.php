@@ -12,9 +12,48 @@ $args = array(
     'posts_per_page'    => 10,
     'paged'             => $paged,
     'orderby'           => 'date',
-    'order'             => 'DESC'
+    'order'             => 'DESC',
+    'tax_query' => array(
+         array (
+            'taxonomy' => 'property_status',
+            'field' => 'slug',
+            'terms' => 'past-sold',
+            'operator' => 'NOT IN'
+        )
+    ),
 );
+
+if (!empty($_GET['filter'])) {
+  $args = array(
+    'post_type'         => 'our_listings',
+    'posts_per_page'    => 10,
+    'paged'             => $paged,
+    'orderby'           => 'date',
+    'order'             => 'DESC',
+    'tax_query' => array(
+      'relation' => 'AND',
+        array (
+            'taxonomy' => 'property_status',
+            'field' => 'slug',
+            'terms' => $_GET['filter'],
+        ),
+         array (
+            'taxonomy' => 'property_status',
+            'field' => 'slug',
+            'terms' => 'past-sold',
+            'operator' => 'NOT IN'
+        )
+    ),
+);
+}
+
+
 $articles = new WP_Query($args );
+
+$propertyStatsArray = array(
+  'less-than-500000' => "Less than $500,000",
+  'more-than-500000' => "More than $500,000",
+);
 
 ?>
 
@@ -32,6 +71,14 @@ $articles = new WP_Query($args );
         <div class="row">
           <div class="col-12 mb-4">
             <h1>Our Listings</h1>
+            <div class="button-nav">
+              <a href="<?php echo get_post_type_archive_link('our_listings'); ?>"
+                class="<?php echo !$_GET['filter'] ? 'active' : ''; ?>">All</a>
+              <?php foreach ($propertyStatsArray as $key => $value) { ?>
+              <a href="<?php echo get_post_type_archive_link('our_listings'); ?>?filter=<?php echo $key ?>"
+                class="<?php echo $key == $_GET['filter'] ? 'active' : ''; ?>"><?php echo $value ?></a>
+              <?php } ?>
+            </div>
           </div>
 
           <?php  if ( $articles->have_posts() ) {
@@ -58,10 +105,17 @@ $articles = new WP_Query($args );
           
           wp_reset_postdata();
           
-          } ?>
+          } else { ?>
+          <div class="col-12">
+            <h3 class="text-center">There are currently no properties that fit this criteria. Please check back soon.
+            </h3>
+          </div>
+          <?php } ?>
+          <?php if ( $articles->have_posts() ) : ?>
           <div class="col-12">
             <?php include get_stylesheet_directory() . '/components/pagination-nav.php'; ?>
           </div>
+          <?php endif; ?>
         </div>
       </div>
     </section>

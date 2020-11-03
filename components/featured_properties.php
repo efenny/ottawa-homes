@@ -31,10 +31,10 @@
               <div class="info">
                 <h3 class="text-white h4"><?php echo get_the_title(); ?></h3>
               </div>
-              <?php if(has_category('sold')) : ?>
+              <?php if(has_term('past-sold', 'property_status')) : ?>
               <div class="extra bg-primary py-1 px-3 text-white">Sold!</div>
               <?php endif; ?>
-              <?php if(has_category('new')) : ?>
+              <?php if(has_term('new', 'property_status')) : ?>
               <div class="extra bg-success py-1 px-3 text-white">New!</div>
               <?php endif; ?>
             </a>

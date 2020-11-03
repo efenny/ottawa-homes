@@ -143,7 +143,7 @@
                     "key": "field_5f80bebab3a08",
                     "label": "Neighbourhood",
                     "name": "neighbourhood",
-                    "type": "post_object",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -152,14 +152,11 @@
                         "class": "",
                         "id": ""
                     },
-                    "post_type": [
-                        "nieghbours"
-                    ],
-                    "taxonomy": "",
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "return_format": "object",
-                    "ui": 1
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 },
                 {
                     "key": "field_5f80beeab3a09",
@@ -364,5 +361,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1604080161
+    "modified": 1604416237
 }

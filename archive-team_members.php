@@ -38,8 +38,10 @@ global $wp_query;
                     $wp_query->the_post(); ?>
           <a href="<?php echo get_the_permalink(); ?>" class="col-12 col-md-4 d-flex mb-3 team-member">
             <div class="card w-100 text-center border-0">
-              <img class="card-img-top" src="<?php echo get_the_post_thumbnail_url(); ?>"
-                alt="<?php echo get_the_title(); ?>">
+              <figure>
+                <img class="card-img-top" src="<?php echo get_the_post_thumbnail_url(); ?>"
+                  alt="<?php echo get_the_title(); ?>">
+              </figure>
               <div class="card-body px-0">
                 <h3 class="card-title "><?php echo get_the_title(); ?></h3>
                 <p class="card-text"><?php echo get_field('role'); ?></p>

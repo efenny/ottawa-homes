@@ -98,9 +98,11 @@ $basic_details = get_field('basic_details');
               <?php endif; ?>
             </div>
             <div class="basic-details mt-4">
+              <?php if($basic_details['neighbourhood']) : ?>
               <div class="neighbourhood">
                 <strong>Neighbourhood:</strong> <?php echo $basic_details['neighbourhood']; ?>
               </div>
+              <?php endif; ?>
               <div class="details mt-2">
                 <?php $detail_array = array(
                   "Style" => $basic_details['style'],
@@ -160,6 +162,8 @@ $basic_details = get_field('basic_details');
 
 
     <?php $our_listings = get_field('our_listings', 'options') ?>
+
+    <?php if($our_listings) : ?>
     <section id="contact_block" class="section-padding-top section-padding-bottom light-blue-bg position-relative ">
       <div class="container">
         <div class="row align-items-center">
@@ -172,6 +176,7 @@ $basic_details = get_field('basic_details');
         </div>
       </div>
     </section>
+    <?php endif; ?>
   </main>
 </div>
 
