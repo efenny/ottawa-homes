@@ -52,6 +52,24 @@
       transition: opacity 0.3s ease-in-out;
     }
   }
+
+  .blog-item {
+    figure {
+      width: 100%;
+      padding-bottom: 56.625%;
+      position: relative;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      object-fit: cover;
+      transition: filter 0.3s ease-in-out;
+    }
+  }
 }
 
 .blog-item {
@@ -67,22 +85,6 @@
     .read-more {
       color: $primary;
     }
-  }
-
-  figure {
-    width: 100%;
-    padding-bottom: 56.625%;
-    position: relative;
-  }
-
-  img {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    object-fit: cover;
-    transition: filter 0.3s ease-in-out;
   }
 
   p {

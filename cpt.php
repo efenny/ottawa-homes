@@ -163,4 +163,38 @@ function location_cat() {
 }
 add_action( 'init', 'location_cat' );
 
+
+
+
+function property_status() {
+
+    $labels = array(
+        'name'              => _x( 'Property Status', 'taxonomy general name', 'textdomain' ),
+        'singular_name'     => _x( 'Property Status', 'taxonomy singular name', 'textdomain' ),
+        'search_items'      => __( 'Search Property Status', 'textdomain' ),
+        'all_items'         => __( 'All Property Status', 'textdomain' ),
+        'parent_item'       => __( 'Parent Property Status', 'textdomain' ),
+        'parent_item_colon' => __( 'Parent Property Status:', 'textdomain' ),
+        'edit_item'         => __( 'Edit Property Status', 'textdomain' ),
+        'update_item'       => __( 'Update Property Status', 'textdomain' ),
+        'add_new_item'      => __( 'Add New Property Status', 'textdomain' ),
+        'new_item_name'     => __( 'New Property Status Name', 'textdomain' ),
+        'menu_name'         => __( 'Property Status', 'textdomain' ),
+    ); 
+    
+  // create a new taxonomy
+  register_taxonomy(
+      'property_status',
+      'our_listings',
+      array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+      )
+  );
+}
+add_action( 'init', 'property_status' );
+
 ?>

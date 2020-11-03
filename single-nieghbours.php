@@ -19,15 +19,20 @@ $container = get_theme_mod('understrap_container_type');
 
     <section class="section-padding-top section-padding-bottom">
       <div class="container">
-
-
         <div class="row">
 
           <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
           <article class="col-12 col-md-8 mb-4 mb-md-0  -content">
             <h1 class="h2"><?php echo get_the_title(); ?></h1>
-
+            <figure class="featured-image mb-3">
+              <?php echo get_the_post_thumbnail(get_the_ID(), 'large', array(
+                  'alt' => get_the_title()
+                )); ?>
+              <?php if(get_the_post_thumbnail_caption()): ?>
+              <figcaption class="mt-3"><?php echo get_the_post_thumbnail_caption(); ?></figcaption>
+              <?php endif; ?>
+            </figure>
             <?php echo apply_filters( 'the_content', get_the_content() ) ?>
             <!-- share -->
             <?php get_template_part('components/social_share', '', array(

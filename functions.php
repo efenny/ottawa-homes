@@ -42,7 +42,7 @@ $neighbourhoods = array(
 );
 
 $cpts = array(
-    'our_listings' => array('Our Listing', 'dashicons-format-aside', true),
+    'our_listings' => array('Our Listing', 'dashicons-format-aside'),
     // 'neighbourhoods' => array('Neighbourhood', 'dashicons-admin-multisite', true),
     'team_members' => array('Team Member', 'dashicons-admin-users')
 );

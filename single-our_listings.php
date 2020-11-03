@@ -21,7 +21,7 @@ $basic_details = get_field('basic_details');
       <div class="container position-relative">
         <div class="row">
           <div class="col-12 text-white">
-            <?php if(is_single()) : ?>
+            <?php if(is_single() && get_the_category()) : ?>
             <h3><?php echo get_the_category()[0]->name; ?></h3>
             <?php endif; ?>
             <h1><?php echo get_the_title(); ?></h1>
@@ -99,9 +99,7 @@ $basic_details = get_field('basic_details');
             </div>
             <div class="basic-details mt-4">
               <div class="neighbourhood">
-                <strong>Neighbourhood:</strong>
-                <a href="<?php echo get_the_permalink($basic_details['neighbourhood']->ID); ?>"
-                  target="_blank"><?php echo $basic_details['neighbourhood']->post_title; ?></a>
+                <strong>Neighbourhood:</strong> <?php echo $basic_details['neighbourhood']; ?>
               </div>
               <div class="details mt-2">
                 <?php $detail_array = array(
@@ -148,7 +146,7 @@ $basic_details = get_field('basic_details');
         </div>
         <?php endif; ?>
 
-
+        <?php if(get_field('map_iframe')) : ?>
         <div class="row map">
           <div class="col-12">
             <div class="iframe-wrapper">
@@ -156,8 +154,10 @@ $basic_details = get_field('basic_details');
             </div>
           </div>
         </div>
+        <?php endif; ?>
       </div>
     </section>
+
 
     <?php $our_listings = get_field('our_listings', 'options') ?>
     <section id="contact_block" class="section-padding-top section-padding-bottom light-blue-bg position-relative ">
