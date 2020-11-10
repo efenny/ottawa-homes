@@ -7178,6 +7178,18 @@ var our_listingGalleryMain = new Swiper('.single-our_listings .gallery-top', {
   },
 });
 
+var slider_block = new Swiper(
+  '.slider_block .gallery-wrapper.swiper-container',
+  {
+    autoplay: true,
+    speed: 400,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  }
+);
+
 const gallerImage = document.querySelectorAll('.gallery-top .large-images');
 
 gallerImage.forEach((image) => {

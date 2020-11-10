@@ -1,0 +1,13 @@
+#loginform {
+  p {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #wp-submit {
+    border: none;
+    background: $secondary;
+    color: $white;
+  }
+}

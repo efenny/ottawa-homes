@@ -9,6 +9,8 @@
 @import 'components/_testimony_block';
 @import 'components/_video-text-block';
 @import 'components/_card_block';
+@import 'components/_mortgage_block';
+@import 'components/_slider_block';
 @import 'components/_social-share';
 @import 'components/_forms';
 @import 'components/_footer';
@@ -160,4 +162,8 @@ section {
   &.show {
     transform: translateY(0);
   }
+}
+
+.iframe-wrapper {
+  @include iframe_16_9;
 }

@@ -427,6 +427,43 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_5faab967aeb38": {
+                    "key": "layout_5faab967aeb38",
+                    "name": "slider_block",
+                    "label": "Slider block",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5faab973aeb3c",
+                            "label": "Gallery",
+                            "name": "gallery",
+                            "type": "gallery",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "insert": "append",
+                            "library": "all",
+                            "min": "",
+                            "max": "",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_5f8735bbca708": {
                     "key": "layout_5f8735bbca708",
                     "name": "card_block",
@@ -1103,5 +1140,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1604372041
+    "modified": 1605024136
 }
