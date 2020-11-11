@@ -134,6 +134,7 @@ var slider_block = new Swiper(
   '.slider_block .gallery-wrapper.swiper-container',
   {
     autoplay: true,
+    loop: true,
     speed: 400,
     navigation: {
       nextEl: '.swiper-button-next',

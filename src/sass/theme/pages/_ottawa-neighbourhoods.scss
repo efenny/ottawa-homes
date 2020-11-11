@@ -1,0 +1,18 @@
+#featured {
+  ol {
+    column-count: 3;
+    column-gap: 1rem;
+
+    @include media-breakpoint-down(md) {
+      column-count: 2;
+    }
+
+    @include media-breakpoint-down(sm) {
+      column-count: 1;
+    }
+  }
+}
+
+ol {
+  padding-left: 1em;
+}

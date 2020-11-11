@@ -47,6 +47,7 @@ $container = get_theme_mod('understrap_container_type');
  
             $args = array(
               "post_type" => "nieghbours",
+              'posts_per_page' => -1,
               'tax_query' => array(
                   array (
                       'taxonomy' => 'locations',
