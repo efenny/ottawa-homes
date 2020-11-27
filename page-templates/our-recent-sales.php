@@ -1,5 +1,12 @@
 <?php
 
+
+/**
+ * Template name: Our Recent Sales
+ * @package understrap-child
+ */
+
+
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
 
@@ -11,13 +18,16 @@ $args = array(
     'post_type'         => 'our_listings',
     'posts_per_page'    => 10,
     'paged'             => $paged,
-    'orderby'           => 'date',
-    'order'             => 'DESC',
+    'orderby' => 'date',
+    'order'   => 'DESC',
+    'post_status' => 'publish',
+    'suppress_filters' => true,
     'tax_query' => array(
          array (
             'taxonomy' => 'property_status',
             'field' => 'slug',
             'terms' => 'past-sold',
+             'operator' => 'IN'
         )
     ),
 );
@@ -51,16 +61,14 @@ $articles = new WP_Query($args );
           $articles->the_post();?>
           <div class="col-12 col-md-6 mb-5">
             <article class="blog-item">
-              <a href="<?php echo get_the_permalink(); ?>">
-                <div class="img mb-4">
-                  <?php echo  get_the_post_thumbnail(get_the_ID(), 'slider-blog') ?>
-                </div>
-                <div class="info">
-                  <h3 class="h4 mb-2">
-                    <?php echo get_the_title(); ?><?php echo get_field('price') ? ' - $'.number_format(get_field('price')) : ''; ?>
-                  </h3>
-                </div>
-              </a>
+              <div class="img mb-4">
+                <?php echo  get_the_post_thumbnail(get_the_ID(), 'slider-blog') ?>
+              </div>
+              <div class="info">
+                <h3 class="h4 mb-2">
+                  <?php echo get_the_title(); ?><?php echo get_field('price') ? ' - $'.number_format(get_field('price')) : ''; ?>
+                </h3>
+              </div>
             </article>
           </div>
 

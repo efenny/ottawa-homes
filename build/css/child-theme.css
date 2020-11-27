@@ -12863,19 +12863,19 @@ section[id*='cta_block'] {
   transition: filter 0.3s ease-in-out;
   transition: filter 0.3s ease-in-out, -webkit-filter 0.3s ease-in-out; }
 
-.blog-item {
+.swiper-slide .blog-item {
   text-decoration: none !important;
   outline: none !important; }
-  .blog-item:hover {
+  .swiper-slide .blog-item:hover {
     opacity: 1; }
-    .blog-item:hover img {
+    .swiper-slide .blog-item:hover img {
       -webkit-filter: brightness(0.6);
               filter: brightness(0.6); }
-    .blog-item:hover .read-more {
+    .swiper-slide .blog-item:hover .read-more {
       color: #dc1c2e; }
-  .blog-item p {
+  .swiper-slide .blog-item p {
     color: #182947; }
-  .blog-item .read-more {
+  .swiper-slide .blog-item .read-more {
     font-weight: 700;
     font-size: 1.125rem;
     color: #182947;
